@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
     <ul class="navbar-nav">  
            <li class="nav-item active" style="margin-right:500px;">
-      <a class="nav-link" ><i class="fas fa-home"></i> Bienvenido</a>
+      <a class="nav-link" ><i class="fas fa-home"></i> Home</a>
     </li>
           <li class="nav-item active">
       <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
@@ -37,6 +37,8 @@
                         <h4> Alquilar</h4>
                         <h5>Usted va poder registrar el alquiler de una habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
+                                            <a class="btn btn-dark" href="Alquilar.aspx">Ingresar</a>
+
            </div>
             </div>    
                       <div class="col-md-4 col-sm-12 col-12">
@@ -46,6 +48,8 @@
                         <h4>Clientes</h4>
                         <h5>Usted va poder agregar y modificar clientes.</h5> </div>
                     <div class="section-heading-line-left"></div>
+                                                                <a class="btn btn-dark" href="ClienteABML.aspx">Ingresar</a>
+
         </div>
             </div>
                <div class="col-md-4 col-sm-12 col-12">
@@ -55,6 +59,8 @@
                         <h4>Disponibles </h4>
                         <h5>Usted va poder ver las habitaciones disponibles. </h5> </div>
                     <div class="section-heading-line-left"></div>
+                                                                <a class="btn btn-dark" href="HabitacionDisponible.aspx">Ingresar</a>
+
                 </div>
             </div>
             </div>
@@ -66,8 +72,8 @@
                         <h4>Entregar</h4>
                         <h5>Usted va poder registrar la entrega de la habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
-                   
-                </div>
+                                                               <a class="btn btn-dark" href="Entregar.aspx">Ingresar</a>
+                                    </div>
             </div>
               </div>
         </div>

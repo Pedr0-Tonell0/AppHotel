@@ -70,6 +70,8 @@
     <Content Include="Alquilar.aspx" />
     <Content Include="AlquilerLista.aspx" />
     <Content Include="ClienteABML.aspx" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\fresh-bootstrap-table.css" />
     <Content Include="css\Home.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\PrincipalGerente.css" />
@@ -78,6 +80,8 @@
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HabitacionABML.aspx" />
+    <Content Include="js\demo.js" />
+    <Content Include="js\gsdk-switch.js" />
     <Content Include="js\Home.js" />
     <Content Include="Login.aspx" />
     <Content Include="PrincipalEmpleado.aspx" />
@@ -181,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
+    <Content Include="js\jquery.sharrre" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
