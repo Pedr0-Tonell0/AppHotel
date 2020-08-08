@@ -1,0 +1,5 @@
+C:\Users\pedri_000\Desktop\AppHotel\Dominio\bin\Debug\Dominio.dll
+C:\Users\pedri_000\Desktop\AppHotel\Dominio\bin\Debug\Dominio.pdb
+C:\Users\pedri_000\Desktop\AppHotel\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\pedri_000\Desktop\AppHotel\Dominio\obj\Debug\Dominio.dll
+C:\Users\pedri_000\Desktop\AppHotel\Dominio\obj\Debug\Dominio.pdb

@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="AppHotel.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <form id="principal" runat="server">
+              <div>
+            <div id="header">
+                <header>
+                    <asp:ContentPlaceHolder ID="cabecera" runat="server">
+
+
+                   
+
+                   
+                    </asp:ContentPlaceHolder>
+                </header>
+            </div>
+                  </div>
+       <div id="section">
+                <section>
+
+                    <asp:ContentPlaceHolder ID="cuerpo" runat="server">
+
+
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+            </form>
+</body>
+</html>
+

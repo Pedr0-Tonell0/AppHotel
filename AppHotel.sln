@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "AppHotel\Vista.csproj", "{5FE0FA20-68E9-4AC7-A8AB-4EB2F76EA9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{3778CF88-FA06-4711-B92A-8FC3E0B0BDFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{EA1DBAA0-791D-4FE8-9850-D6710961E33E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FE0FA20-68E9-4AC7-A8AB-4EB2F76EA9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE0FA20-68E9-4AC7-A8AB-4EB2F76EA9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE0FA20-68E9-4AC7-A8AB-4EB2F76EA9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE0FA20-68E9-4AC7-A8AB-4EB2F76EA9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3778CF88-FA06-4711-B92A-8FC3E0B0BDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3778CF88-FA06-4711-B92A-8FC3E0B0BDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3778CF88-FA06-4711-B92A-8FC3E0B0BDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3778CF88-FA06-4711-B92A-8FC3E0B0BDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1DBAA0-791D-4FE8-9850-D6710961E33E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1DBAA0-791D-4FE8-9850-D6710961E33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1DBAA0-791D-4FE8-9850-D6710961E33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1DBAA0-791D-4FE8-9850-D6710961E33E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ED43E84-719F-4D60-8685-36537EAE3DE3}
+	EndGlobalSection
+EndGlobal
