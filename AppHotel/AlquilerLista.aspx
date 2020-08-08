@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Reporte" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AlquilerLista.aspx.cs" Inherits="AppHotel.AlquilerLista" %>
+﻿<%@ Page Title="Alquileres" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AlquilerLista.aspx.cs" Inherits="AppHotel.AlquilerLista" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">

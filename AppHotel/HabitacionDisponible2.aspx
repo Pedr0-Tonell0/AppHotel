@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Disponibilidad" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionDisponible.aspx.cs" Inherits="AppHotel.HabitacionDisponible" %>
+﻿<%@ Page Title="Disponibilidad" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionDisponible2.aspx.cs" Inherits="AppHotel.HabitacionDisponible2" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -86,30 +86,24 @@
 <script src="js/demo.js"></script>
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">   
-            <li class="nav-item active" style="margin-right:350px;">
-      <a class="nav-link" href="PrincipalGerente.aspx" ><i class="fas fa-home"></i> Home</a>
-    </li>
-           <li class="nav-item active">
-      <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <ul class="navbar-nav">  
+           <li class="nav-item active" style="margin-right:500px;">
+      <a class="nav-link" href="PrincipalEmpleado.aspx" ><i class="fas fa-home"></i> Home</a>
     </li>
           <li class="nav-item active">
-      <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
+      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>
-        <li class="nav-item active">
-      <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
-            <li class="nav-item active">
-      <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
+  <li class="nav-item active">
+      <a class="nav-link" href="ClienteABML2.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
-      <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
+      <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
     </li>
-                </ul>
+         <li class="nav-item active">
+      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
+    </li>
+  </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <div class="wrapper">

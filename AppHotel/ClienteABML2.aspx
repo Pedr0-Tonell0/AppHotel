@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Alquilar" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Alquilar.aspx.cs" Inherits="AppHotel.Alquiler" %>
+﻿<%@ Page Title="Clientes" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ClienteABML2.aspx.cs" Inherits="AppHotel.ClienteABML2" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -12,10 +12,10 @@
       <a class="nav-link" href="PrincipalEmpleado.aspx" ><i class="fas fa-home"></i> Home</a>
     </li>
           <li class="nav-item active">
-      <a class="nav-link"><i class="fas fa-shield-alt"></i> Alquilar</a>
+      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>
   <li class="nav-item active">
-      <a class="nav-link" href="ClienteABML2.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
+      <a class="nav-link"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
       <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
@@ -38,7 +38,7 @@
          <div class="container">
                <div class="form-row">
             <div class="form-group col-md-4">
-                <h4>Alquilar una habitación</h4>
+                <h4>Ingresá los datos del cliente</h4>
             </div>
         </div>
         <div class="form-row">
@@ -99,3 +99,4 @@
        <br />
 
 </asp:Content>
+

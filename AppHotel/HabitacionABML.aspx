@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Empleados" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionABML.aspx.cs" Inherits="AppHotel.HotelABML" %>
+﻿<%@ Page Title="Habitaciones" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionABML.aspx.cs" Inherits="AppHotel.HotelABML" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
