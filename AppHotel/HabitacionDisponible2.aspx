@@ -111,7 +111,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="description">
-                        <label style="font-size: 22px;">HABITACIONES DISPONIBLES</label>
+                        <label style="font-size: 22px;">Habitaciones disponibles</label>
                     </div>
 
                     <div class="fresh-table full-color-azure" style="width: 100%;">

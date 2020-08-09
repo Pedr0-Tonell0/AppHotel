@@ -123,7 +123,7 @@
 				<div class="row">
 					<div class="col-md-12 col-md-offset-2" style="margin-left: 1%;">
 						<div class="description">
-							<label style="font-size: 22px;">REPORTE</label>
+							<label style="font-size: 22px;">Reporte</label>
 						</div>
 
 						<div class="div_caja"

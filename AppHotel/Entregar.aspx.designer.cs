@@ -24,13 +24,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblDNI;
 
         /// <summary>
-        /// Control TboxDNI.
+        /// Control txtNumeroHabitacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxDNI;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroHabitacion;
 
         /// <summary>
         /// Control BtnBuscar.
@@ -69,31 +69,31 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblApellido;
 
         /// <summary>
-        /// Control TboxApellido.
+        /// Control txtFechaIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
 
         /// <summary>
-        /// Control LblEmail.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblEmail;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control TboxEmail.
+        /// Control txtFechaEgreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaEgreso;
 
         /// <summary>
         /// Control LblDireccion.
@@ -105,13 +105,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblDireccion;
 
         /// <summary>
-        /// Control TboxDirreccion.
+        /// Control TxtDias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxDirreccion;
+        protected global::System.Web.UI.WebControls.TextBox TxtDias;
 
         /// <summary>
         /// Control LblCiudad.
@@ -123,13 +123,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblCiudad;
 
         /// <summary>
-        /// Control TboxCiudad.
+        /// Control txtCosto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxCiudad;
+        protected global::System.Web.UI.WebControls.TextBox txtCosto;
 
         /// <summary>
         /// Control LblCP.
@@ -141,13 +141,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblCP;
 
         /// <summary>
-        /// Control TboxCP.
+        /// Control txtObservaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxCP;
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
 
         /// <summary>
         /// Control BtnParticipar.

@@ -60,24 +60,6 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.TextBox TboxNombre;
 
         /// <summary>
-        /// Control LblApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblApellido;
-
-        /// <summary>
-        /// Control TboxApellido.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxApellido;
-
-        /// <summary>
         /// Control LblEmail.
         /// </summary>
         /// <remarks>
@@ -96,6 +78,24 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.TextBox TboxEmail;
 
         /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Control TextBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
         /// Control LblDireccion.
         /// </summary>
         /// <remarks>
@@ -105,13 +105,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblDireccion;
 
         /// <summary>
-        /// Control TboxDirreccion.
+        /// Control txtPiso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxDirreccion;
+        protected global::System.Web.UI.WebControls.TextBox txtPiso;
 
         /// <summary>
         /// Control LblCiudad.
@@ -123,13 +123,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblCiudad;
 
         /// <summary>
-        /// Control TboxCiudad.
+        /// Control txtTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxCiudad;
+        protected global::System.Web.UI.WebControls.TextBox txtTipo;
 
         /// <summary>
         /// Control LblCP.
@@ -141,13 +141,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblCP;
 
         /// <summary>
-        /// Control TboxCP.
+        /// Control txtSeleccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxCP;
+        protected global::System.Web.UI.WebControls.TextBox txtSeleccion;
 
         /// <summary>
         /// Control BtnParticipar.

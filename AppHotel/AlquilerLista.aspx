@@ -62,9 +62,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="css/fresh-bootstrap-table.css" rel="stylesheet" />
 <link href="css/demo.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/StyleAdministradorGestionCursos.css">
-<link rel="stylesheet" href="css/styleAdministradorReporte.css">
-<link href="css/stylehome.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
@@ -117,7 +114,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="description">
-                        <label style="font-size: 22px;">ALQUILERES</label>
+                        <label style="font-size: 22px;">Alquileres</label>
                     </div>
 
                     <div class="fresh-table full-color-green" style="width: 100%;">
