@@ -84,6 +84,7 @@
     <Content Include="js\demo.js" />
     <Content Include="js\gsdk-switch.js" />
     <Content Include="js\Home.js" />
+    <Content Include="js\Validaciones.js" />
     <Content Include="Login.aspx" />
     <Content Include="PrincipalEmpleado.aspx" />
     <Content Include="PrincipalGerente.aspx" />

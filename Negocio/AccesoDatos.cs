@@ -17,7 +17,7 @@ namespace Negocio
         public AccesoDatos()
 
         {
-            conexion = new SqlConnection("data source = PEDR0\\SQLEXPRESS; initial catalog = AppHotel ; integrated security=sspi");
+            conexion = new SqlConnection("data source = PEDR0\\SQLEXPRESS; initial catalog = AppHotel; integrated security=sspi");
             comando = new SqlCommand();
             comando.Connection = conexion;
         }

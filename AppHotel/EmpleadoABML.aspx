@@ -65,6 +65,7 @@
 <script src="js/gsdk-switch.js"></script>
 <script src="js/jquery.sharrre.js"></script>
 <script src="js/demo.js"></script>
+ <script src="js/Validaciones.js"></script>
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
@@ -112,7 +113,7 @@
                 <p id="MensajeErrorDNI"></p>
             </div>
             <div class="form-group col-md-3">
-                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="background-color:black;margin-top: 33px; margin-left: 10px;" runat="server"  disabled="true"  />
+                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="background-color:black;margin-left: 10px;margin-top:27px;" runat="server" OnClick="BtnBuscar_Click"     />
             </div>
         </div>
         <div class="form-row " style="margin-top: 10px;">
@@ -126,7 +127,7 @@
                 <div class="input-group" style="margin-top: 10px;">
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
-                                            <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="txtEmail" CssClass="form-control " />
+                             <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="txtEmail" CssClass="form-control " />
                     </div>
                     <p id="MensajeErrorEmail"></p>
                 </div>
@@ -140,7 +141,7 @@
             </div>
              </div>
         <div>
-<asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnParticipar" runat="server"  disabled="true" />
+<asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
    </div>
             </div>
     

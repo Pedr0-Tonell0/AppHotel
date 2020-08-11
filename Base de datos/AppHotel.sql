@@ -38,3 +38,5 @@ Observaciones varchar(150) null,
 Precio money null,
 Estado bit null
 )
+
+
