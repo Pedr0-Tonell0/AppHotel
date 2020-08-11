@@ -70,7 +70,6 @@
     <Content Include="Alquilar.aspx" />
     <Content Include="AlquilerLista.aspx" />
     <Content Include="ClienteABML.aspx" />
-    <Content Include="ClienteABML2.aspx" />
     <Content Include="css\demo.css" />
     <Content Include="css\fresh-bootstrap-table.css" />
     <Content Include="css\Home.css" />
@@ -112,13 +111,6 @@
     </Compile>
     <Compile Include="ClienteABML.aspx.designer.cs">
       <DependentUpon>ClienteABML.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClienteABML2.aspx.cs">
-      <DependentUpon>ClienteABML2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClienteABML2.aspx.designer.cs">
-      <DependentUpon>ClienteABML2.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmpleadoABML.aspx.cs">
       <DependentUpon>EmpleadoABML.aspx</DependentUpon>

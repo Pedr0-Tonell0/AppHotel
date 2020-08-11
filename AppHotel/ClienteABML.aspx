@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Clientes" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"CodeBehind="ClienteABML.aspx.cs" Inherits="AppHotel.ClienteABML" %>
+﻿<%@ Page Title="Clientes" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ClienteABML.aspx.cs" Inherits="AppHotel.ClienteABML2" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -68,29 +68,23 @@
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">   
-            <li class="nav-item active" style="margin-right:350px;">
-      <a class="nav-link" href="PrincipalGerente.aspx" ><i class="fas fa-home"></i> Home</a>
-    </li>
-           <li class="nav-item active">
-      <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+    <ul class="navbar-nav">  
+           <li class="nav-item active" style="margin-right:500px;">
+      <a class="nav-link" href="PrincipalEmpleado.aspx" ><i class="fas fa-home"></i> Home</a>
     </li>
           <li class="nav-item active">
+      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
+    </li>
+  <li class="nav-item active">
       <a class="nav-link"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
-        <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
-            <li class="nav-item active">
-      <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
-    </li>
       <li class="nav-item active">
-      <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
+      <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
-                </ul>
+         <li class="nav-item active">
+      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
+    </li>
+  </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
  <section>
@@ -102,10 +96,10 @@
     </style>
 
    <br />
-         <div class="container"> 
+         <div class="container">
                <div class="form-row">
             <div class="form-group col-md-4">
-                <h4 style="margin-top:-10px;font-size: 22px;">Ingrese los datos del cliente</h4>
+                <h4 style="margin-top:-10px;">Ingresá los datos del cliente</h4>
             </div>
         </div>
         <div class="form-row">
@@ -115,7 +109,7 @@
                 <p id="MensajeErrorDNI"></p>
             </div>
             <div class="form-group col-md-3">
-                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px;background-color:black;" runat="server"   />
+                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px;background-color:black;" runat="server"  disabled="true"  />
             </div>
         </div>
         <div class="form-row " style="margin-top: 10px;">
@@ -124,26 +118,23 @@
                 <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="TboxNombre" CssClass="form-control" />
                 <p id="MensajeErrorNombre"></p>
             </div>
-           
-            <div class="form-group col-md-4">
+                  <div class="form-group col-md-4">
                 <asp:Label Text="Email" ID="LblEmail" runat="server" ClientIDMode="Static" CssClass="control-label " />
                 <div class="input-group" style="margin-top: 10px;">
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
-                        <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="TboxEmail" CssClass="form-control " />
-                    </div>
-                                        <p id="MensajeErrorEmail"></p>
+                                            <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="TboxEmail" CssClass="form-control " />
 
+                    </div>
+                    <p id="MensajeErrorEmail"></p>
                 </div>
             </div>
         </div>
-                      <div>
+                     <div>
 <asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnParticipar" runat="server"  disabled="true" />
    </div>
             </div>
-    
- </section>
-   
+   </section>
  <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
             <div class="fresh-table full-color-blue" style="width: 100%;">

@@ -11,7 +11,7 @@ namespace AppHotel
 {
 
 
-    public partial class ClienteABML
+    public partial class ClienteABML2
     {
 
         /// <summary>

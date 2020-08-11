@@ -6,3 +6,11 @@ C:\Users\pedri_000\Desktop\AppHotel\Negocio\obj\Debug\Negocio.csprojAssemblyRefe
 C:\Users\pedri_000\Desktop\AppHotel\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\pedri_000\Desktop\AppHotel\Negocio\obj\Debug\Negocio.dll
 C:\Users\pedri_000\Desktop\AppHotel\Negocio\obj\Debug\Negocio.pdb
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\bin\Debug\Negocio.dll
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\bin\Debug\Negocio.pdb
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\bin\Debug\Dominio.dll
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\bin\Debug\Dominio.pdb
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\obj\Debug\Negocio.dll
+C:\Users\pedri_000\Desktop\clon\AppHotel\Negocio\obj\Debug\Negocio.pdb

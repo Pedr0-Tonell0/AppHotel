@@ -16,7 +16,7 @@
       <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>
   <li class="nav-item active">
-      <a class="nav-link" href="ClienteABML2.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
+      <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
       <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
@@ -48,7 +48,7 @@
                         <h4>Clientes</h4>
                         <h5>Usted va poder agregar y modificar clientes.</h5> </div>
                     <div class="section-heading-line-left"></div>
-        <a class="btn btn-dark" href="ClienteABML2.aspx">Ingresar</a>
+        <a class="btn btn-dark" href="ClienteABML.aspx">Ingresar</a>
 
         </div>
             </div>

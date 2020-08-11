@@ -75,10 +75,7 @@
            <li class="nav-item active">
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
-          <li class="nav-item active">
-      <a class="nav-link " href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
-    </li>
-        <li class="nav-item active">
+            <li class="nav-item active">
       <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
             <li class="nav-item active">
@@ -124,12 +121,7 @@
                 <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
                 <p id="MensajeErrorNombre"></p>
             </div>
-            <div class="form-group col-md-3">
-                <asp:Label Text="Cargo" ID="LblCargo" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtCargo" CssClass="form-control" />
-                <p id="MensajeErrorApellido"></p>
-            </div>
-            <div class="form-group col-md-4">
+                    <div class="form-group col-md-4">
                 <asp:Label Text="Email" ID="LblEmail" runat="server" ClientIDMode="Static" CssClass="control-label " />
                 <div class="input-group" style="margin-top: 10px;">
                     <div class="input-group-prepend">

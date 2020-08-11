@@ -87,10 +87,7 @@
            <li class="nav-item active">
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
-          <li class="nav-item active">
-      <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
-    </li>
-        <li class="nav-item active">
+             <li class="nav-item active">
       <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
             <li class="nav-item active">

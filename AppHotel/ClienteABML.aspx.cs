@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AppHotel
 {
-    public partial class ClienteABML : System.Web.UI.Page
+    public partial class ClienteABML2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
