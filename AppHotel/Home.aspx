@@ -159,6 +159,7 @@
 			          <span class="socail-l ml-3 mb-3">
 			            <a href="https://github.com/Pedr0-Tonell0" class="mr-2"><i class="fa fa-github box-circle-solid"></i></a>
 						<a href="https://www.linkedin.com/in/pedro-ignacio-tonello/" class="mr-2"><i class="fa fa-linkedin box-circle-solid"></i></a>
+						<a href="http://pedrotonello.tonohost.com/" class="mr-2"><img style="margin-top:-10px;" src="https://img.icons8.com/fluent/48/000000/chrome.png"/></a>
 			          </span>
 			        </div>
 			    </div>
