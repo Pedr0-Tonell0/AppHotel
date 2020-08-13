@@ -148,33 +148,62 @@
  </section>
           <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
-                        <div class="fresh-table full-color-blue" style="width: 100%;">
+            <div class="fresh-table full-color-blue" style="width: 100%;">
                 <div class="toolbar">
                     <button id="alertBtn" class="btn btn-default">Refrescar</button>
                 </div>
                 <table id="fresh-table" class="table">
                     <thead>
-                        <th data-field="Materia" data-sortable="true">MATERIA</th>
-                        <th data-field="Apellido" data-sortable="true">Profesor</th>
-                        <th data-field="Cuatrimestre" data-sortable="true">Cuatrimestre</th>
-                        <th data-field="Anio" data-sortable="true">Anio</th>
-                        <th data-field="Alumnos" data-sortable="true">Cantidad alumnos</th>
-                        <th data-field="Aprobacion" data-sortable="true">%
-										Aprobacion</th>
-                        <th data-field="Desaprobados" data-sortable="true">%
-										Desaprobados</th>
-                        <th data-field="actions"></th>
-                    </thead>
+                        <th data-field="Materia" data-sortable="true">Dni</th>
+                        <th data-field="Apellido" data-sortable="true">Nombre</th>
+                        <th data-field="Cuatrimestre" data-sortable="true">Email</th>
+                        <th data-field="Anio" data-sortable="true">Eliminar</th>
+                      </thead>
                     <tbody>
+                       <%       if(ListaEmpleado !=null)
+                        foreach (var item in ListaEmpleado)
+            { %>
                         <tr>
-                            <th>Prueba</th>
-                            <th>Pedro</th>
-                            </tr>
-               </tbody>
+                            <th id="dni"><% = item.Dni%></th>
+                            <th><% = item.Nombre%></th>
+                             <th><% = item.Email%></th>
+                            <th><a href="#ordine"  class="btn btn-dark" data-toggle="modal" data-id="<%= item.Dni.ToString()%>" >Eliminar</a></th>
+                            
+                        </tr>
+                          <% } %>
+                    </tbody>
                 </table>
             </div>
         </div>
+              </div>
+    <script>
+        $(document).ready(function () {
+            $(".dark").click(function () { // Click to only happen on announce links
+                $("#dni").val($(this).data('dni'));
+                $('#createFormId').modal('show');
+            });
+        });
+    </script>
+
+    <div id="ordine" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminar empleado</h4>
+      </div>
+      <div class="modal-body">
+        <p>Usted esta seguro ?</p>
+      </div>
+      <div class="modal-footer">
+          <asp:Button runat="server"  class="btn btn-success btn-md" ID="Ok" Text="Si"  />
+          <a href="EmpleadoABML.aspx" class="btn btn-danger btn-md">No</a>
+      </div>
     </div>
+
+  </div>
+</div>
+
+            
     <script type="text/javascript">
         var $alertBtn2 = $('#alertBtn2')
         var $table = $('#fresh-table')

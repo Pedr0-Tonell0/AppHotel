@@ -11,10 +11,12 @@ namespace AppHotel
 {
     public partial class EmpleadoABML : System.Web.UI.Page
     {
+        public List<Empleado> ListaEmpleado;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
+            EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
+            ListaEmpleado = EmpleadoNegocio.ListarEmpleado();
+            }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -83,5 +85,10 @@ namespace AppHotel
                 throw ex;
             }
         }
+
+  
+
+
+
     }
-}
+}   

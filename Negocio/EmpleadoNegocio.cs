@@ -72,5 +72,37 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<Empleado> ListarEmpleado()
+        {
+            List<Empleado> Lista = new List<Empleado>();
+            Empleado Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Empleado();
+                    Aux.Dni= datos.lector.GetInt32(0);
+                    Aux.Nombre = datos.lector.GetString(1);
+                    Aux.Email = datos.lector.GetString(2);
+                    Lista.Add(Aux);
+                }
+                   return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
     }
 }
