@@ -39,6 +39,38 @@ namespace Negocio
             return null;
         }
 
+        public bool BuscarUserPass(string User, string Pass)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+
+            try
+            {
+                datos.setearQuery("Select u.Dni, u.Usuario, u.Contraseña from Usuario as u where u.Usuario = @Usuario and u.Contraseña = @Contraseña");
+                datos.agregarParametro("@Usuario", User);
+                datos.agregarParametro("@Contraseña", Pass);
+                datos.ejecutarLector();
+
+                while (datos.lector.Read())
+                {
+                    Usuario Usuario = new Usuario();
+                    Usuario.Dni = datos.lector.GetInt32(0);
+                    Usuario.User = datos.lector.GetString(1);
+                    Usuario.Pass = datos.lector.GetString(2);
+                    Estado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return Estado;
+        }
+
         public bool CambiarContraseña(string ContraseñaAntigua, string ContraseñaNueva, int Dni)
         {
             AccesoDatos datos = new AccesoDatos();

@@ -28,7 +28,12 @@ namespace AppHotel
                 bool Estado;
                 Usuario.Pass = txtPassNew.Text;
                 User.Pass = txtPassOld.Text;
-                if (UsuarioSession.Pass.Equals(User.Pass) == true)
+                if (txtPassNew.Text == "" || txtPassOld.Text=="")
+                {
+                    lblMensaje.Text = "Hay campos vacios.";
+
+                }
+                if (UsuarioNegocio.BuscarUserPass(UsuarioSession.User,User.Pass) == true)
                 {
                     if (Usuario.Pass.Equals(User.Pass) == false)
                     {
@@ -43,7 +48,7 @@ namespace AppHotel
                             lblMensaje.Text = "Error la contraseña no ha sido cambiada correctamente.";
                         }
                     }
-                    else
+                    else if (Usuario.Pass.Equals(User.Pass) == true)
                     {
                         lblMensaje.Text = "La contraseña nueva no puede ser igual a la antigua.";
 
@@ -51,14 +56,14 @@ namespace AppHotel
                 }
                 else
                 {
-                    lblMensaje.Text = "Error la contraseña no ha sido cambiada correctamente.";
+                    lblMensaje.Text = "Error la contraseña actual no coincide con el nombre de usuario.";
 
                 }
             }
             catch (Exception)
             {
 
-                throw;
+                lblMensaje.Text = "Error hay campos vacios.";
             }
 
         }
