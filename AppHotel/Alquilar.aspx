@@ -81,13 +81,21 @@
 <script src="js/gsdk-switch.js"></script>
 <script src="js/jquery.sharrre.js"></script>
 <script src="js/demo.js"></script>
+           <%@ Import Namespace="Dominio" %>  
+    <%@ Import Namespace="Negocio" %>  
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">  
-           <li class="nav-item active" style="margin-right:500px;">
-      <a class="nav-link" href="PrincipalEmpleado.aspx" ><i class="fas fa-home"></i> Home</a>
-    </li>
+        <ul class="navbar-nav">
+            <%Empleado Empleado = new Empleado();
+                 Empleado = (Empleado)Session["EmpleadoLogueado"];
+                %>
+            <li class="nav-item active" style="margin-right: 350px;">
+                                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
+            </li>
+                        <li class="nav-item active">
+                <a class="nav-link" href="PrincipalEmpleado.aspx"><i class="fas fa-home"></i> Home</a>
+            </li>
           <li class="nav-item active">
       <a class="nav-link"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>

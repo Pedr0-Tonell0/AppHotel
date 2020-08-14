@@ -4,14 +4,21 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="css/PrincipalGerente.css" rel="stylesheet" >
-
+       <%@ Import Namespace="Dominio" %>  
+    <%@ Import Namespace="Negocio" %>  
 </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">  
-           <li class="nav-item active" style="margin-right:500px;">
-      <a class="nav-link" ><i class="fas fa-home"></i> Home</a>
-    </li>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav">
+            <%Empleado Empleado = new Empleado();
+                 Empleado = (Empleado)Session["EmpleadoLogueado"];
+                %>
+            <li class="nav-item active" style="margin-right: 350px;">
+                                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
+            </li>
+                        <li class="nav-item active">
+                <a class="nav-link"><i class="fas fa-home"></i> Home</a>
+            </li>
           <li class="nav-item active">
       <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>

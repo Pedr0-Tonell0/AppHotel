@@ -42,6 +42,7 @@ namespace AppHotel
                     EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
                     Empleado Empleado = new Empleado();
                     Empleado = EmpleadoNegocio.BuscarEmpleadoUsuario(User.Dni);
+                    Session["EmpleadoLogueado"] = Empleado;
                     if (Empleado.Rol == 1)
                     {
                         Response.Redirect("PrincipalGerente.aspx");
