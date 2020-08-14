@@ -79,7 +79,7 @@
       <a class="nav-link"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
+      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
          <li class="nav-item active">
       <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
@@ -105,33 +105,31 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <asp:Label Text="DNI" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeyup="validarDNI()" onKeyPress="return soloNumeros(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="TboxDNI" CssClass="form-control" />
-                <p id="MensajeErrorDNI"></p>
+                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeypress="return SoloInt(event)"  MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtDNI" CssClass="form-control"  />
             </div>
             <div class="form-group col-md-3">
-                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px;background-color:black;" runat="server"  disabled="true"  />
+                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px;background-color:black;" runat="server" OnClick="BtnBuscar_Click"   />
             </div>
         </div>
         <div class="form-row " style="margin-top: 10px;">
             <div class="form-group col-md-3">
                 <asp:Label Text="Nombre" ID="LblNombre" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="TboxNombre" CssClass="form-control" />
-                <p id="MensajeErrorNombre"></p>
+                <asp:TextBox runat="server" onkeypress="return SoloString(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
             </div>
                   <div class="form-group col-md-4">
                 <asp:Label Text="Email" ID="LblEmail" runat="server" ClientIDMode="Static" CssClass="control-label " />
                 <div class="input-group" style="margin-top: 10px;">
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
-                                            <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="TboxEmail" CssClass="form-control " />
-
+                                            <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="txtEmail" CssClass="form-control " />
                     </div>
-                    <p id="MensajeErrorEmail"></p>
                 </div>
             </div>
         </div>
                      <div>
-<asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnParticipar" runat="server"  disabled="true" />
+<asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click" />
+   <br />
+                        <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
    </div>
             </div>
    </section>
@@ -143,26 +141,23 @@
                 </div>
                 <table id="fresh-table" class="table">
                     <thead>
-                        <th data-field="Materia" data-sortable="true">MATERIA</th>
-                        <th data-field="Apellido" data-sortable="true">Profesor</th>
-                        <th data-field="Cuatrimestre" data-sortable="true">Cuatrimestre</th>
-                        <th data-field="Anio" data-sortable="true">Anio</th>
-                        <th data-field="Alumnos" data-sortable="true">Cantidad alumnos</th>
-                        <th data-field="Aprobacion" data-sortable="true">%
-										Aprobacion</th>
-                        <th data-field="Desaprobados" data-sortable="true">%
-										Desaprobados</th>
-                        <th data-field="actions"></th>
-                    </thead>
+                        <th data-field="Dni" data-sortable="true">Dni</th>
+                        <th data-field="Nombre" data-sortable="true">Nombre</th>
+                        <th data-field="Email" data-sortable="true">Email</th>
+                        <th data-field="Eliminar" data-sortable="true">Eliminar</th>
+                      </thead>
                     <tbody>
+                           <%       if(ListaCliente !=null)
+                        foreach (var item in ListaCliente)
+            { %>
                         <tr>
-                            <th>Prueba</th>
-                            <th>Pedro</th>
-
+                              <th><% = item.Dni%></th>
+                            <th><% = item.Nombre%></th>
+                             <th><% = item.Email%></th>
+                            <th><a  href="ClienteEliminar.aspx?Dni=<% = item.Dni%>"  class="btn btn-dark">Eliminar</a></th>
                         </tr>
-                        <th>Prueba</th>
-                        <th>Juan</th>
-                    </tbody>
+                          <% } %>
+                        </tbody>
                 </table>
             </div>
         </div>

@@ -95,7 +95,7 @@
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
+      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
          <li class="nav-item active">
       <a class="nav-link"><i class="fas fa-bed"></i> Entregar</a>

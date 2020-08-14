@@ -42,4 +42,3 @@ Precio money null,
 Estado bit null
 )
 
-

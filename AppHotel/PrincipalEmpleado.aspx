@@ -19,7 +19,7 @@
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible2.aspx"><i class="far fa-clock"></i> Disponibles</a>
+      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
     </li>
          <li class="nav-item active">
       <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
@@ -59,7 +59,7 @@
                         <h4>Disponibles </h4>
                         <h5>Usted va poder ver las habitaciones disponibles. </h5> </div>
                     <div class="section-heading-line-left"></div>
-                                                                <a class="btn btn-dark" href="HabitacionDisponible2.aspx">Ingresar</a>
+                                                                <a class="btn btn-dark" href="HabitacionDisponible.aspx">Ingresar</a>
 
                 </div>
             </div>

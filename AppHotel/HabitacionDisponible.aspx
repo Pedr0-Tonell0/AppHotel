@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Disponibilidad" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionDisponible.aspx.cs" Inherits="AppHotel.HabitacionDisponible" %>
+﻿<%@ Page Title="Disponibilidad" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionDisponible.aspx.cs" Inherits="AppHotel.HabitacionDisponible2" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -10,7 +10,7 @@
 	href="https://www.creative-tim.com/product/fresh-bootstrap-table" />
 <meta name="keywords"
 	content="creative tim, html table, html css table, web table, freebie, free bootstrap table, bootstrap, css3 table, bootstrap table, fresh bootstrap table, frontend, modern table, responsive bootstrap table, responsive bootstrap table">
-    <meta name="description"
+<meta name="description"
 	content="Probably the most beautiful and complex bootstrap table you've ever seen on the internet, this bootstrap table is one of the essential plugins you will need.">
 <meta itemprop="name" content="Fresh Bootstrap Table by Creative Tim">
 <meta itemprop="description"
@@ -58,7 +58,7 @@
 	crossorigin="anonymous">
 <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300"
 	rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
 <script
@@ -70,35 +70,32 @@
 <script src="js/demo.js"></script>
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
-    <ul class="navbar-nav">   
-            <li class="nav-item active" style="margin-right:350px;">
-      <a class="nav-link" href="PrincipalGerente.aspx" ><i class="fas fa-home"></i> Home</a>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <ul class="navbar-nav">  
+           <li class="nav-item active" style="margin-right:500px;">
+      <a class="nav-link" href="PrincipalEmpleado.aspx" ><i class="fas fa-home"></i> Home</a>
     </li>
-           <li class="nav-item active">
-      <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+          <li class="nav-item active">
+      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
     </li>
-        <li class="nav-item active">
-      <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
-            <li class="nav-item active">
-      <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
+  <li class="nav-item active">
+      <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
       <li class="nav-item active">
-      <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
+      <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
     </li>
-                </ul>
+         <li class="nav-item active">
+      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
+    </li>
+  </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-       <div class="wrapper">
+  <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
 <div class="description">
                         <label style="font-size: 22px;">Habitaciones disponibles</label>
                     </div>
-            <div class="fresh-table full-color-green" style="width: 100%;">
+            <div class="fresh-table full-color-orange" style="width: 100%;">
                 <div class="toolbar">
                     <button id="alertBtn" class="btn btn-default">Refrescar</button>
                 </div>

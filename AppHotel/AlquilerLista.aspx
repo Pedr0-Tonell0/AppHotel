@@ -75,9 +75,6 @@
            <li class="nav-item active">
       <a class="nav-link" ><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
-                 <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
             <li class="nav-item active">
       <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>
     </li>

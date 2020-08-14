@@ -77,9 +77,6 @@
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
             <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
-            <li class="nav-item active">
       <a class="nav-link"> <i class="fas fa-users"></i> Empleados</a>
     </li>
     <li class="nav-item active">
@@ -140,8 +137,7 @@
         <div>
 <asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
    <br />
-                        <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:green;"></asp:Label> 
-                        <asp:Label ID="lblMensaje2" runat="server" style="font:icon;color:red;"></asp:Label> 
+                        <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
 
         </div>
             </div>

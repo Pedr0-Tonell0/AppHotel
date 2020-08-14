@@ -27,6 +27,7 @@ namespace AppHotel
 
             if (txtDNI.Text == "")
             {
+                lblMensaje.Text = "Error para buscar tiene que ingresar el DNI";
 
             }
 
@@ -75,7 +76,7 @@ namespace AppHotel
                     Empleado.Email = txtEmail.Text;
                     if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
                     {
-                        lblMensaje2.Text = "Hay campos que se encuentran vacios";
+                        lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
                     Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
@@ -88,7 +89,7 @@ namespace AppHotel
                     }
                     else
                     {
-                        lblMensaje2.Text = "Error el empleado no fue agregado correctamente";
+                        lblMensaje.Text = "Error el empleado no fue agregado correctamente";
                     }
                    
                 }
@@ -99,7 +100,7 @@ namespace AppHotel
                     Empleado.Email = txtEmail.Text;
                     if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
                     {
-                        lblMensaje2.Text = "Hay campos que se encuentran vacios";
+                        lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
                     Estado = EmpleadoNegocio.ModificarEmpleado(Empleado);
@@ -112,7 +113,7 @@ namespace AppHotel
                     }
                     else
                     {
-                        lblMensaje2.Text = "Error el empleado no fue modificado correctamente";
+                        lblMensaje.Text = "Error el empleado no fue modificado correctamente";
 
                     }
 
@@ -120,7 +121,7 @@ namespace AppHotel
             }
             catch (Exception)
             {
-                lblMensaje2.Text = "Error en el formulario";
+                lblMensaje.Text = "Hay campos que se encuentran vacios";
 
             }
         }

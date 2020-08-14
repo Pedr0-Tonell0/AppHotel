@@ -24,13 +24,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblDNI;
 
         /// <summary>
-        /// Control TboxDNI.
+        /// Control txtDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxDNI;
+        protected global::System.Web.UI.WebControls.TextBox txtDNI;
 
         /// <summary>
         /// Control BtnBuscar.
@@ -51,13 +51,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblNombre;
 
         /// <summary>
-        /// Control TboxNombre.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
         /// Control LblEmail.
@@ -69,21 +69,30 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblEmail;
 
         /// <summary>
-        /// Control TboxEmail.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// Control BtnParticipar.
+        /// Control BtnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnParticipar;
+        protected global::System.Web.UI.WebControls.Button BtnAgregar;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

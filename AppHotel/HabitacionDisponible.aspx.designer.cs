@@ -11,7 +11,7 @@ namespace AppHotel
 {
 
 
-    public partial class HabitacionDisponible
+    public partial class HabitacionDisponible2
     {
     }
 }
