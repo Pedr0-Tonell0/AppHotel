@@ -38,6 +38,36 @@ namespace Negocio
             return null;
         }
 
+        public Empleado BuscarEmpleadoUsuario(int Dni)
+        {
+            Empleado Empleado;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("Select e.Dni, e.Nombre, e.Email, e.Rol from Empleado as e where e.Dni = " + Dni);
+                datos.ejecutarLector();
+
+                if (datos.lector.Read())
+                {
+                    Empleado = new Empleado();
+                    Empleado.Dni = datos.lector.GetInt32(0);
+                    Empleado.Nombre = datos.lector.GetString(1);
+                    Empleado.Email = datos.lector.GetString(2);
+                    Empleado.Rol = datos.lector.GetInt32(3);
+                    return Empleado;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return null;
+        }
+
         public bool AgregarEmpleado(Empleado Empleado)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -52,6 +82,30 @@ namespace Negocio
                 datos.agregarParametro("@Estado", true);
                 datos.agregarParametro("@Rol", 2);
 
+                datos.ejecutarAccion();
+                Estado = true;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Estado;
+
+        }
+
+        public bool GenerarUsuario(Empleado Empleado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+
+            try
+            {
+                datos.setearQuery("insert into Usuario (Dni,Usuario,Contraseña)values(@DNI,@Usuario,@Contraseña)");
+                datos.agregarParametro("@DNI", Empleado.Dni);
+                datos.agregarParametro("@Usuario", Empleado.Dni + ".bulldog");
+                datos.agregarParametro("@Contraseña", Empleado.Dni);
                 datos.ejecutarAccion();
                 Estado = true;
 
@@ -117,7 +171,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e where e.Estado=1");
+                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e where e.Estado=1 and e.Rol=2");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {

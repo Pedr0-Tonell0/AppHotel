@@ -31,13 +31,15 @@
             <br />
             <br />
 
-                  <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" class="btn btn-warning btn-sm" style="hover {
+                  <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" class="btn btn-warning btn-sm" style="hover {
     box-shadow: 2px 1px 2px 3px #fff;
     background: #5900a6;
     color: darkviolet;
     transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
-}" />
+}" OnClick="btnIngresar_Click" />
        <br />
+                              <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
+
             <br />
         <br />
             <br />

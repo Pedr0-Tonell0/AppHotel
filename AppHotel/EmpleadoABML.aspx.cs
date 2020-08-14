@@ -82,6 +82,7 @@ namespace AppHotel
                     Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
                     if (Estado == true)
                     {
+                        EmpleadoNegocio.GenerarUsuario(Empleado);
                         lblMensaje.Text = "Empleado agregado correctamente";
                         txtDNI.Text = "";
                         txtNombre.Text = "";
