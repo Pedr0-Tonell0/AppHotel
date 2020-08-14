@@ -12,7 +12,7 @@ namespace Dominio
 
         public int Rol { get; set; }
 
-
+        public bool Estado { get; set; }
         public string Nombre { get; set; }
 
         public string Email { get; set; }

@@ -16,7 +16,8 @@ namespace AppHotel
         {
             EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
             ListaEmpleado = EmpleadoNegocio.ListarEmpleado();
-            }
+
+        }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -26,6 +27,7 @@ namespace AppHotel
 
             if (txtDNI.Text == "")
             {
+
             }
 
             else
@@ -60,6 +62,7 @@ namespace AppHotel
         {
             try
             {
+                bool Estado; 
                 EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
                 Empleado Empleado = new Empleado();
                 Empleado = null;
@@ -70,25 +73,58 @@ namespace AppHotel
                     Empleado.Dni = Convert.ToInt32(txtDNI.Text);
                     Empleado.Nombre = txtNombre.Text;
                     Empleado.Email = txtEmail.Text;
-                    EmpleadoNegocio.AgregarEmpleado(Empleado);
+                    if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
+                    {
+                        lblMensaje2.Text = "Hay campos que se encuentran vacios";
+
+                    }
+                    Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
+                    if (Estado == true)
+                    {
+                        lblMensaje.Text = "Empleado agregado correctamente";
+                        txtDNI.Text = "";
+                        txtNombre.Text = "";
+                        txtEmail.Text = "";
+                    }
+                    else
+                    {
+                        lblMensaje2.Text = "Error el empleado no fue agregado correctamente";
+                    }
+                   
                 }
                 else if (Empleado != null)
                 {
                     Empleado.Dni = Convert.ToInt32(txtDNI.Text);
                     Empleado.Nombre = txtNombre.Text;
                     Empleado.Email = txtEmail.Text;
-                    EmpleadoNegocio.ModificarEmpleado(Empleado);
+                    if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
+                    {
+                        lblMensaje2.Text = "Hay campos que se encuentran vacios";
+
+                    }
+                    Estado = EmpleadoNegocio.ModificarEmpleado(Empleado);
+                    if (Estado == true)
+                    {
+                        lblMensaje.Text = "Empleado modificado correctamente";
+                        txtDNI.Text = "";
+                        txtNombre.Text = "";
+                        txtEmail.Text = "";
+                    }
+                    else
+                    {
+                        lblMensaje2.Text = "Error el empleado no fue modificado correctamente";
+
+                    }
+
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                lblMensaje2.Text = "Error en el formulario";
+
             }
         }
 
-  
-
-
-
+    
     }
 }   

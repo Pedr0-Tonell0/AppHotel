@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Empleados" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EmpleadoABML.aspx.cs" Inherits="AppHotel.EmpleadoABML" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
-<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -109,27 +109,25 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <asp:Label Text="DNI" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeyup="validarDNI()" onKeyPress="return soloNumeros(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtDNI" CssClass="form-control" />
-                <p id="MensajeErrorDNI"></p>
+                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeypress="return SoloInt(event)"  MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtDNI" CssClass="form-control"  />
             </div>
             <div class="form-group col-md-3">
                 <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="background-color:black;margin-left: 10px;margin-top:27px;" runat="server" OnClick="BtnBuscar_Click"     />
             </div>
+
         </div>
         <div class="form-row " style="margin-top: 10px;">
             <div class="form-group col-md-3">
                 <asp:Label Text="Nombre" ID="LblNombre" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
-                <p id="MensajeErrorNombre"></p>
+                <asp:TextBox runat="server" onkeypress="return SoloString(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
             </div>
                     <div class="form-group col-md-4">
                 <asp:Label Text="Email" ID="LblEmail" runat="server" ClientIDMode="Static" CssClass="control-label " />
                 <div class="input-group" style="margin-top: 10px;">
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
-                             <asp:TextBox runat="server" onkeyup="validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="txtEmail" CssClass="form-control " />
+                             <asp:TextBox runat="server" onkeyup="return validarEmail()" onfocus="Seleccionar(this.id)" MaxLength="33" ClientIDMode="Static" placeholder="Ejemplo@gmail.com" ID="txtEmail" CssClass="form-control "  />
                     </div>
-                    <p id="MensajeErrorEmail"></p>
                 </div>
             </div>
         </div>
@@ -137,12 +135,15 @@
             <div class="form-group col-md-5">
                 <asp:Label Text="Foto" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label " />
                 <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="40" Style="margin-top: 10px;" ID="txtFoto" ClientIDMode="Static"  CssClass="form-control " />
-                <p id="MensajeErrorDireccion"></p>
             </div>
              </div>
         <div>
 <asp:Button Text="Agregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
-   </div>
+   <br />
+                        <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:green;"></asp:Label> 
+                        <asp:Label ID="lblMensaje2" runat="server" style="font:icon;color:red;"></asp:Label> 
+
+        </div>
             </div>
     
  </section>
@@ -164,11 +165,10 @@
                         foreach (var item in ListaEmpleado)
             { %>
                         <tr>
-                            <th id="dni"><% = item.Dni%></th>
+                            <th><% = item.Dni%></th>
                             <th><% = item.Nombre%></th>
                              <th><% = item.Email%></th>
-                            <th><a href="#ordine"  class="btn btn-dark" data-toggle="modal" data-id="<%= item.Dni.ToString()%>" >Eliminar</a></th>
-                            
+                            <th><a  href="EmpleadoEliminar.aspx?Dni=<% = item.Dni%>"  class="btn btn-dark">Eliminar</a></th>
                         </tr>
                           <% } %>
                     </tbody>
@@ -176,32 +176,7 @@
             </div>
         </div>
               </div>
-    <script>
-        $(document).ready(function () {
-            $(".dark").click(function () { // Click to only happen on announce links
-                $("#dni").val($(this).data('dni'));
-                $('#createFormId').modal('show');
-            });
-        });
-    </script>
-
-    <div id="ordine" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Eliminar empleado</h4>
-      </div>
-      <div class="modal-body">
-        <p>Usted esta seguro ?</p>
-      </div>
-      <div class="modal-footer">
-          <asp:Button runat="server"  class="btn btn-success btn-md" ID="Ok" Text="Si"  />
-          <a href="EmpleadoABML.aspx" class="btn btn-danger btn-md">No</a>
-      </div>
-    </div>
-
-  </div>
-</div>
+  
 
             
     <script type="text/javascript">

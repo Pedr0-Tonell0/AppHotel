@@ -38,26 +38,37 @@ namespace Negocio
             return null;
         }
 
-        public void AgregarEmpleado(Empleado Empleado)
+        public bool AgregarEmpleado(Empleado Empleado)
         {
             AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+
             try
             {
-                datos.setearQuery("insert into Empleado (Dni,Nombre,Email)values(@DNI,@Nombre,@Email)");
+                datos.setearQuery("insert into Empleado (Dni,Nombre,Email,Estado,Rol)values(@DNI,@Nombre,@Email,@Estado,@Rol)");
                 datos.agregarParametro("@DNI", Empleado.Dni);
                 datos.agregarParametro("@Nombre", Empleado.Nombre);
                 datos.agregarParametro("@Email", Empleado.Email);
+                datos.agregarParametro("@Estado", true);
+                datos.agregarParametro("@Rol", 2);
+
                 datos.ejecutarAccion();
+                Estado = true;
+
             }
 
             catch (Exception ex)
             {
                 throw ex;
             }
+            return Estado;
+
         }
-        public void ModificarEmpleado(Empleado Empleado)
+        public bool ModificarEmpleado(Empleado Empleado)
         {
             AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+
             try
             {
                 datos.setearQuery("update Empleado set Nombre = @Nombre where Dni = @DNI;update Empleado set Email = @Email where Dni = @DNI;update Empleado set Dni = @DNI where DNI = @DNI;");
@@ -66,11 +77,36 @@ namespace Negocio
                 datos.agregarParametro("@Nombre", Empleado.Nombre);
                 datos.agregarParametro("@Email", Empleado.Email);
                 datos.ejecutarAccion();
+                Estado = true;
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            return Estado;
+        }
+
+        public bool EliminarEmpleado(int Dni)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+            try
+            {
+                datos.setearQuery("update Empleado set Estado = 0 where Dni = @DNI;");
+
+                datos.agregarParametro("@DNI", Dni);
+
+                datos.ejecutarAccion();
+                Estado = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
+            return Estado;
+
         }
 
         public List<Empleado> ListarEmpleado()
@@ -81,7 +117,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e");
+                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e where e.Estado=1");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {

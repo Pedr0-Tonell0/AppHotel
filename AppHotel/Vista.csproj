@@ -76,6 +76,7 @@
     <Content Include="css\Login.css" />
     <Content Include="css\PrincipalGerente.css" />
     <Content Include="EmpleadoABML.aspx" />
+    <Content Include="EmpleadoEliminar.aspx" />
     <Content Include="Entregar.aspx" />
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="HabitacionDisponible2.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="EmpleadoABML.aspx.designer.cs">
       <DependentUpon>EmpleadoABML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoEliminar.aspx.cs">
+      <DependentUpon>EmpleadoEliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadoEliminar.aspx.designer.cs">
+      <DependentUpon>EmpleadoEliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entregar.aspx.cs">
       <DependentUpon>Entregar.aspx</DependentUpon>

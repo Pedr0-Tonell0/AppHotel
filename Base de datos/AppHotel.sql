@@ -4,13 +4,16 @@ use AppHotel
 create table Empleado(
 Dni int primary key,
 Nombre varchar (100) null,
-Email varchar (50) null
+Email varchar (50) null,
+Rol int null,
+Estado bit null
 )
 
 create table Cliente(
 Dni int primary key,
 Nombre varchar (100) null,
-Email varchar (50) null
+Email varchar (50) null,
+Estado bit null
 )
 
 create table Habitacion(
