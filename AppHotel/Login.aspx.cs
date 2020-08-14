@@ -25,23 +25,23 @@ namespace AppHotel
                 UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
                 Usuario.Pass = txtContraseña.Text;
                 Usuario.User = txtUsuario.Text;
-                Usuario.Dni = (Convert.ToInt32(txtContraseña.Text));
                 if(txtContraseña.Text == "" || txtUsuario.Text == "")
                 {
                     lblMensaje.Text = "Hay campos vacios.";
 
                 }
-                if (UsuarioNegocio.BuscarUsuario(Usuario) == null)
+                if (UsuarioNegocio.BuscarUsuario(Usuario.User, Usuario.Pass) == null)
                 {
                     lblMensaje.Text = "Usuario o contraseña incorrecta.";
 
                 }
                 else
                 {
-                    User = UsuarioNegocio.BuscarUsuario(Usuario);
+                    User = UsuarioNegocio.BuscarUsuario(Usuario.User, Usuario.Pass);
                     EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
                     Empleado Empleado = new Empleado();
                     Empleado = EmpleadoNegocio.BuscarEmpleadoUsuario(User.Dni);
+                    Session["UsuarioLogueado"] = User;
                     Session["EmpleadoLogueado"] = Empleado;
                     if (Empleado.Rol == 1)
                     {

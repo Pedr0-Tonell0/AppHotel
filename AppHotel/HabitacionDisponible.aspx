@@ -89,6 +89,9 @@
   <li class="nav-item active">
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
+                          <li class="nav-item active">
+      <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+    </li>
       <li class="nav-item active">
       <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
     </li>

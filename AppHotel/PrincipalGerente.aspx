@@ -22,6 +22,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
             </li>
+                    <li class="nav-item active">
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+    </li>
              <li class="nav-item active">
                 <a class="nav-link" href="EmpleadoABML.aspx"><i class="fas fa-users"></i> Empleados</a>
             </li>
@@ -49,6 +52,17 @@
                         <a class="btn btn-dark" href="AlquilerLista.aspx">Ingresar</a>
                     </div>
                 </div>
+                     <div class="col-md-4 col-sm-12 col-12">
+                    <div class="serv-section-2">
+                        <div class="serv-section-2-icon"><i class="fas fa-unlock"></i></div>
+                        <div class="serv-section-desc">
+                            <h4>Cambiar contraseña</h4>
+                            <h5>Va poder cambiar su contraseña.</h5>
+                        </div>
+                        <div class="section-heading-line-left"></div>
+                        <a class="btn btn-dark" href="GerenteCambiarPass.aspx">Ingresar</a>
+                    </div>
+                </div>
                       <div class="col-md-4 col-sm-12 col-12">
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-users"></i></div>
@@ -60,7 +74,10 @@
                         <a class="btn btn-dark" href="EmpleadoABML.aspx">Ingresar</a>
                     </div>
                 </div>
-                  <div class="col-md-4 col-sm-12 col-12">
+                  
+            </div>
+            <div class="row mt-60">
+                <div class="col-md-4 col-sm-12 col-12">
                     <div class="serv-section-2 serv-section-2-act">
                         <div class="serv-section-2-icon serv-section-2-icon-act"><i class="fas fa-bed"></i></div>
                         <div class="serv-section-desc">
@@ -70,11 +87,8 @@
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="HabitacionABML.aspx">Ingresar</a>
                     </div>
-                </div>
-
-            </div>
-            <div class="row mt-60">
-                      <div class="col-md-4 col-sm-12 col-12">
+                </div>   
+                <div class="col-md-4 col-sm-12 col-12">
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-chart-bar"></i></div>
                         <div class="serv-section-desc">

@@ -74,7 +74,6 @@
         </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
 
-<body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
             <%Empleado Empleado = new Empleado();
@@ -88,6 +87,9 @@
             </li>
            <li class="nav-item active">
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+    </li>
+                    <li class="nav-item active">
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
     </li>
             <li class="nav-item active">
       <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>

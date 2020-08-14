@@ -47,3 +47,4 @@ Usuario varchar(50) null,
 Contraseña varchar(50) null,
 Dni int primary key
 )
+

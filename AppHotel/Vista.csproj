@@ -77,8 +77,10 @@
     <Content Include="css\Login.css" />
     <Content Include="css\PrincipalGerente.css" />
     <Content Include="EmpleadoABML.aspx" />
+    <Content Include="EmpleadoCambiarPass.aspx" />
     <Content Include="EmpleadoEliminar.aspx" />
     <Content Include="Entregar.aspx" />
+    <Content Include="GerenteCambiarPass.aspx" />
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HabitacionABML.aspx" />
@@ -128,6 +130,13 @@
     <Compile Include="EmpleadoABML.aspx.designer.cs">
       <DependentUpon>EmpleadoABML.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadoCambiarPass.aspx.cs">
+      <DependentUpon>EmpleadoCambiarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadoCambiarPass.aspx.designer.cs">
+      <DependentUpon>EmpleadoCambiarPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmpleadoEliminar.aspx.cs">
       <DependentUpon>EmpleadoEliminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +150,13 @@
     </Compile>
     <Compile Include="Entregar.aspx.designer.cs">
       <DependentUpon>Entregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GerenteCambiarPass.aspx.cs">
+      <DependentUpon>GerenteCambiarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GerenteCambiarPass.aspx.designer.cs">
+      <DependentUpon>GerenteCambiarPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="HabitacionDisponible.aspx.cs">
       <DependentUpon>HabitacionDisponible.aspx</DependentUpon>
