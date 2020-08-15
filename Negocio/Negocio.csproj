@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AlquilerNegocio.cs" />
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="EmpleadoNegocio.cs" />
     <Compile Include="HabitacionNegocio.cs" />

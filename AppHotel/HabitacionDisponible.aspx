@@ -87,8 +87,8 @@
                         <li class="nav-item active">
                 <a class="nav-link" href="PrincipalEmpleado.aspx"><i class="fas fa-home"></i> Home</a>
             </li>
-          <li class="nav-item active">
-      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
+         <li class="nav-item active">
+      <a class="nav-link" ><i class="far fa-clock"></i> Alquilar</a>
     </li>
   <li class="nav-item active">
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
@@ -96,9 +96,7 @@
                           <li class="nav-item active">
       <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
-      <li class="nav-item active">
-      <a class="nav-link"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
+ 
          <li class="nav-item active">
       <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
@@ -116,25 +114,28 @@
                 </div>
                 <table id="fresh-table" class="table">
                     <thead>
-                        <th data-field="Materia" data-sortable="true">MATERIA</th>
-                        <th data-field="Apellido" data-sortable="true">Profesor</th>
-                        <th data-field="Cuatrimestre" data-sortable="true">Cuatrimestre</th>
-                        <th data-field="Anio" data-sortable="true">Anio</th>
-                        <th data-field="Alumnos" data-sortable="true">Cantidad alumnos</th>
-                        <th data-field="Aprobacion" data-sortable="true">%
-										Aprobacion</th>
-                        <th data-field="Desaprobados" data-sortable="true">%
-										Desaprobados</th>
-                        <th data-field="actions"></th>
+                         <th data-field="Materia" data-sortable="true">Numero de habitacion</th>
+                        <th data-field="Apellido" data-sortable="true">Piso</th>
+                                                <th data-field="Cuatrimestre" data-sortable="true">Tipo</th>
+                        <th data-field="Precio" data-sortable="true">Precio</th>
+                               <th data-field="Descripcion" data-sortable="true">Descripcion</th>
+                      <th data-field="Alquilar" data-sortable="true">Alquilar</th>
+
                     </thead>
                     <tbody>
+                                  <%       if(HabitacionLista !=null)
+                        foreach (var item in HabitacionLista)
+            { %>
                         <tr>
-                            <th>Prueba</th>
-                            <th>Pedro</th>
+                           <th ><% = item.Numero%></th>
+                            <th><% = item.Piso%></th>
+                             <th><% = item.Tipo.Nombre%></th>
+                              <th>$ <% = item.Tipo.Precio%></th>
+                        <th><% = item.Descripcion%></th>
+                       <th><a  href="Alquilar.aspx?Habitacion=<% = item.Numero%>"  class="btn btn-dark">Alquilar</a></th>
 
                         </tr>
-                        <th>Prueba</th>
-                        <th>Juan</th>
+                                <% } %>
                     </tbody>
                 </table>
             </div>

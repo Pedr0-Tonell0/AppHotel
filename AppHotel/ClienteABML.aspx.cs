@@ -81,14 +81,14 @@ namespace AppHotel
                     Estado = ClienteNegocio.AgregarCliente(Cliente);
                     if (Estado == true)
                     {
-                        lblMensaje.Text = "Empleado agregado correctamente";
+                        lblMensaje.Text = "Cliente agregado correctamente";
                         txtDNI.Text = "";
                         txtNombre.Text = "";
                         txtEmail.Text = "";
                     }
                     else
                     {
-                        lblMensaje.Text = "Error el empleado no fue agregado correctamente";
+                        lblMensaje.Text = "Error el cliente no fue agregado correctamente";
                     }
 
                 }
@@ -105,14 +105,14 @@ namespace AppHotel
                     Estado = ClienteNegocio.ModificarCliente(Cliente);
                     if (Estado == true)
                     {
-                        lblMensaje.Text = "Empleado modificado correctamente";
+                        lblMensaje.Text = "Cliente modificado correctamente";
                         txtDNI.Text = "";
                         txtNombre.Text = "";
                         txtEmail.Text = "";
                     }
                     else
                     {
-                        lblMensaje.Text = "Error el empleado no fue modificado correctamente";
+                        lblMensaje.Text = "Error el cliente no fue modificado correctamente";
 
                     }
 

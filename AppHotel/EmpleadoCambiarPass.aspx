@@ -85,8 +85,8 @@
                         <li class="nav-item active">
                 <a class="nav-link" href="PrincipalEmpleado.aspx"><i class="fas fa-home"></i> Home</a>
             </li>
-       <li class="nav-item active">
-      <a class="nav-link" href="Alquilar.aspx"><i class="fas fa-shield-alt"></i> Alquilar</a>
+      <li class="nav-item active">
+      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Alquilar</a>
     </li>
                 <li class="nav-item active">
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
@@ -94,10 +94,7 @@
       <li class="nav-item active">
       <a class="nav-link" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
-    
-      <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible.aspx"><i class="far fa-clock"></i> Disponibles</a>
-    </li>
+
          <li class="nav-item active">
       <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>      </ul>
