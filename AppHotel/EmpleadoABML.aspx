@@ -85,7 +85,7 @@
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
                   <li class="nav-item active">
-      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
             <li class="nav-item active">
       <a class="nav-link"> <i class="fas fa-users"></i> Empleados</a>

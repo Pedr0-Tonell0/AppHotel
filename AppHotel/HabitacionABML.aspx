@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Habitaciones" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionABML.aspx.cs" Inherits="AppHotel.HotelABML" %>
-
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -85,7 +84,7 @@
       <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
                     <li class="nav-item active">
-      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
             <li class="nav-item active">
       <a class="nav-link" href="EmpleadoABML.aspx"> <i class="fas fa-users"></i> Empleados</a>
@@ -99,7 +98,6 @@
                 </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <section>
 
         <style>
             .Error {
@@ -117,38 +115,55 @@
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <asp:Label Text="Numero de habitación" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                    <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeyup="validarDNI()" onKeyPress="return soloNumeros(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtNumeroHabitacion" CssClass="form-control" />
-                    <p id="MensajeErrorDNI"></p>
+                    <asp:TextBox runat="server" onfocus="Seleccionar(this.id)"  onkeypress="return SoloInt(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtNumeroHabitacion" CssClass="form-control" />
                 </div>
                 <div class="form-group col-md-3">
-                    <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px; background-color: black;" runat="server" disabled="true" />
+                    <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="background-color:black;margin-left: 10px;margin-top:27px;" runat="server" OnClick="BtnBuscar_Click" />
                 </div>
             </div>
             <div class="form-row " style="margin-top: 10px;">
-                <div class="form-group col-md-3">
-                    <asp:Label Text="Piso" ID="LblNombre" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                    <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtPiso" CssClass="form-control" />
-                    <p id="MensajeErrorNombre"></p>
-                </div>
-                <div class="form-group col-md-3">
+                    <div class="form-group col-md-3">
                     <asp:Label Text="Tipo de habitación" ID="LblApellido" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                    <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtTipo" CssClass="form-control" />
-                    <p id="MensajeErrorApellido"></p>
-                </div>
+                  <asp:DropDownList  ID="txtTipo"  runat="server" > 
+                            <asp:ListItem Value="1">Matrimonial</asp:ListItem>
+                        <asp:ListItem Value="2">Familiar</asp:ListItem>
+                        <asp:ListItem Value="3">Compartida</asp:ListItem>
+                        <asp:ListItem Value="4">Suite</asp:ListItem>
+
+                   </asp:DropDownList>
+
+
+
+                        </div>
+                               <div class="form-group col-md-3">
+                  <asp:Label Text="Piso" ID="Label1" ClientIDMode="Static" runat="server" CssClass="control-label " />
+
+              <asp:DropDownList ID="ddlPiso" runat="server" >
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                    </asp:DropDownList>
+               
+                        </div>
+             
             </div>
+                           
+
+             
+                
+             
             <div class="form-row" style="margin-top: 10px;">
-                <div class="form-group col-md-5">
-                    <asp:Label Text="Descripcion" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                    <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="40" Style="margin-top: 10px;" ID="txtDescripcion" ClientIDMode="Static" CssClass="form-control " />
-                    <p id="MensajeErrorDireccion"></p>
+                                    <asp:Label Text="Descripcion" style="margin-left: 5px;" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label "  />
+
+                 <asp:TextBox id="txtDescripcion" CssClass="form-control" TextMode="multiline" Columns="30" Rows="3" runat="server" style="margin-top:10px; margin-right:160px;" />
                 </div>
-            </div>
             <div>
-                <asp:Button Text="Agregar" Style="margin-top: 20px; background-color: black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnParticipar" runat="server" disabled="true" />
-            </div>
+                <asp:Button Text="Agregar" Style="margin-top: 20px; background-color: black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
+                                  <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
+
+                </div>
         </div>
 
-    </section>
 
     <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
@@ -159,26 +174,17 @@
                 </div>
                 <table id="fresh-table" class="table">
                     <thead>
-                        <th data-field="Materia" data-sortable="true">MATERIA</th>
-                        <th data-field="Apellido" data-sortable="true">Profesor</th>
-                        <th data-field="Cuatrimestre" data-sortable="true">Cuatrimestre</th>
-                        <th data-field="Anio" data-sortable="true">Anio</th>
-                        <th data-field="Alumnos" data-sortable="true">Cantidad alumnos</th>
-                        <th data-field="Aprobacion" data-sortable="true">%
-										Aprobacion</th>
-                        <th data-field="Desaprobados" data-sortable="true">%
-										Desaprobados</th>
-                        <th data-field="actions"></th>
-                    </thead>
+                        <th data-field="Materia" data-sortable="true">Numero de habitacion</th>
+                        <th data-field="Apellido" data-sortable="true">Piso</th>
+                        <th data-field="Cuatrimestre" data-sortable="true">Tipo</th>
+                                   </thead>
                     <tbody>
                         <tr>
                             <th>Prueba</th>
                             <th>Pedro</th>
 
                         </tr>
-                        <th>Prueba</th>
-                        <th>Juan</th>
-                    </tbody>
+                   </tbody>
                 </table>
             </div>
         </div>

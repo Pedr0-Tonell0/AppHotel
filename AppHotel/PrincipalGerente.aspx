@@ -23,7 +23,7 @@
                 <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
             </li>
                     <li class="nav-item active">
-      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
              <li class="nav-item active">
                 <a class="nav-link" href="EmpleadoABML.aspx"><i class="fas fa-users"></i> Empleados</a>
@@ -46,7 +46,7 @@
                         <div class="serv-section-2-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="serv-section-desc">
                             <h4>Alquileres </h4>
-                            <h5>Va poder ver los alquileres que registro cada empleado.</h5>
+                            <h5>Va poder ver los alquileres<br /> que registro cada empleado.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="AlquilerLista.aspx">Ingresar</a>
@@ -54,10 +54,10 @@
                 </div>
                      <div class="col-md-4 col-sm-12 col-12">
                     <div class="serv-section-2">
-                        <div class="serv-section-2-icon"><i class="fas fa-unlock"></i></div>
+                        <div class="serv-section-2-icon"><i class="fas fa-lock"></i></div>
                         <div class="serv-section-desc">
                             <h4>Cambiar contraseña</h4>
-                            <h5>Va poder cambiar su contraseña.</h5>
+                            <h5>Va poder cambiar su<br /> contraseña para mayor seguridad.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="GerenteCambiarPass.aspx">Ingresar</a>
@@ -68,7 +68,7 @@
                         <div class="serv-section-2-icon"><i class="fas fa-users"></i></div>
                         <div class="serv-section-desc">
                             <h4>Empleados</h4>
-                            <h5>Va poder agregar, modificar y eliminar empleados.</h5>
+                            <h5>Va poder agregar, modificar<br /> y eliminar empleados.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="EmpleadoABML.aspx">Ingresar</a>
@@ -82,7 +82,7 @@
                         <div class="serv-section-2-icon serv-section-2-icon-act"><i class="fas fa-bed"></i></div>
                         <div class="serv-section-desc">
                             <h4>Habitaciones</h4>
-                            <h5>Va poder agregar, modificar y eliminar habitaciones.</h5>
+                            <h5>Va poder agregar y modificar habitaciones.<br /> </h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="HabitacionABML.aspx">Ingresar</a>
@@ -93,7 +93,7 @@
                         <div class="serv-section-2-icon"><i class="fas fa-chart-bar"></i></div>
                         <div class="serv-section-desc">
                             <h4>Reportes</h4>
-                            <h5>Va poder generar un reporte a partir de dos fechas.</h5>
+                            <h5>Va poder generar un reporte<br /> a partir de dos fechas.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="Reporte.aspx">Ingresar</a>

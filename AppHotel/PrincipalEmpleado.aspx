@@ -26,7 +26,7 @@
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
     </li>
                <li class="nav-item active">
-      <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-unlock"></i>Contraseña</a>
+      <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
     
       <li class="nav-item active">
@@ -46,7 +46,7 @@
                     <div class="serv-section-2-icon"> <i class="fas fa-shield-alt"></i> </div>
                     <div class="serv-section-desc">
                         <h4> Alquilar</h4>
-                        <h5>Usted va poder registrar el alquiler de una habitacion.</h5> </div>
+                        <h5>Usted va poder registrar el<br /> alquiler de una habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
                                             <a class="btn btn-dark" href="Alquilar.aspx">Ingresar</a>
 
@@ -57,7 +57,7 @@
                     <div class="serv-section-2-icon"> <i class="fas fa-users"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Clientes</h4>
-                        <h5>Usted va poder agregar y modificar clientes.</h5> </div>
+                        <h5>Usted va poder agregar y  <br />modificar clientes.</h5> </div>
                     <div class="section-heading-line-left"></div>
         <a class="btn btn-dark" href="ClienteABML.aspx">Ingresar</a>
 
@@ -65,10 +65,13 @@
             </div>
        <div class="col-md-4 col-sm-12 col-12">
                     <div class="serv-section-2">
-                        <div class="serv-section-2-icon"><i class="fas fa-unlock"></i></div>
+                        <div class="serv-section-2-icon"><i class="fas fa-lock"></i></div>
                         <div class="serv-section-desc">
                             <h4>Cambiar contraseña</h4>
-                            <h5>Va poder cambiar su contraseña.</h5>
+                            <h5>Va poder cambiar su <br /> contraseña para mayor seguridad.
+
+                            </h5>
+                            
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="EmpleadoCambiarPass.aspx">Ingresar</a>
@@ -82,7 +85,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="far fa-clock"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Disponibles </h4>
-                        <h5>Usted va poder ver las habitaciones disponibles. </h5> </div>
+                        <h5>Usted va poder ver las <br /> habitaciones disponibles. </h5> </div>
                     <div class="section-heading-line-left"></div>
         <a class="btn btn-dark" href="HabitacionDisponible.aspx">Ingresar</a>
                                     </div>
@@ -92,7 +95,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-bed"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Entregar</h4>
-                        <h5>Usted va poder registrar la entrega de la habitacion.</h5> </div>
+                        <h5>Usted va poder registrar la<br /> entrega de la habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
                                                                <a class="btn btn-dark" href="Entregar.aspx">Ingresar</a>
                                     </div>
