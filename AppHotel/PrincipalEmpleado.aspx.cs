@@ -13,5 +13,14 @@ namespace AppHotel
         {
 
         }
+
+        protected void Salir_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
+            System.Web.Security.FormsAuthentication.SignOut();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

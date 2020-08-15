@@ -73,6 +73,10 @@
         <ul class="navbar-nav">
             <%Empleado Empleado = new Empleado();
                  Empleado = (Empleado)Session["EmpleadoLogueado"];
+                    if(Empleado == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 %>
             <li class="nav-item active" style="margin-right: 350px;">
                                 <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>

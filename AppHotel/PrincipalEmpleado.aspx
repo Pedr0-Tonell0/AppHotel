@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Principal Empleado" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"  CodeBehind="PrincipalEmpleado.aspx.cs" Inherits="AppHotel.PrincipalEmpleado" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="css/PrincipalGerente.css" rel="stylesheet" >
@@ -8,12 +8,16 @@
     <%@ Import Namespace="Negocio" %>  
 </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
- <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
             <%Empleado Empleado = new Empleado();
                  Empleado = (Empleado)Session["EmpleadoLogueado"];
+                    if(Empleado == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 %>
-            <li class="nav-item active" style="margin-right: 350px;">
+            <li class="nav-item active" style="margin-right: 200px;">
                                 <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
             </li>
                         <li class="nav-item active">
@@ -35,6 +39,9 @@
          <li class="nav-item active">
       <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
+
+   <a class="nav-link active"> <i class="fas fa-sign-out-alt"> </i> <asp:Button Text="Cerrar Sesion" ID="Salir"  runat="server" style="background-color:black;color:white;border-color:black;border-bottom-color:black;" OnClick="Salir_Click" /></a>
+
   </ul>
 </nav>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">

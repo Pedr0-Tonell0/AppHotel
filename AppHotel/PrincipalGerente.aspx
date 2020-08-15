@@ -11,10 +11,15 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
             <%Empleado Empleado = new Empleado();
-                 Empleado = (Empleado)Session["EmpleadoLogueado"];
+                Empleado = (Empleado)Session["EmpleadoLogueado"];
+
+                if(Empleado == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
                 %>
-            <li class="nav-item active" style="margin-right: 350px;">
-                                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
+            <li class="nav-item active" style="margin-right: 200px;">
+                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
             </li>
                         <li class="nav-item active">
                 <a class="nav-link"><i class="fas fa-home"></i> Home</a>
@@ -34,6 +39,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
             </li>
+                    <a class="nav-link active"> <i class="fas fa-sign-out-alt"> </i> <asp:Button Text="Cerrar Sesion" ID="Salir"  runat="server" style="background-color:black;color:white;border-color:black;border-bottom-color:black;" OnClick="Salir_Click" /></a>
 
         </ul>
     </nav>
