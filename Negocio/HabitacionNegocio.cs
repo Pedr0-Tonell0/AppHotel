@@ -107,7 +107,7 @@ namespace Negocio
                 datos.agregarParametro("@Nombre", Nombre);
                 datos.ejecutarLector();
 
-                while(datos.lector.Read())
+                while (datos.lector.Read())
                 {
                     TipoHabitacion = new TipoHabitacion();
                     TipoHabitacion.Id = datos.lector.GetInt32(0);
@@ -148,6 +148,40 @@ namespace Negocio
             }
 
             return Estado;
+        }
+
+        public List<Habitacion> ListarHabitacion()
+        {
+            List<Habitacion> Lista = new List<Habitacion>();
+            Habitacion Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Habitacion();
+                    Aux.Numero = datos.lector.GetInt32(0);
+                    Aux.Piso = datos.lector.GetInt32(1);
+                    Aux.Descripcion = datos.lector.GetString(2);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(3);
+                    Aux.Tipo.Precio = datos.lector.GetDecimal(4);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
         }
     }
 }

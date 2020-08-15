@@ -16,7 +16,7 @@ namespace Dominio
         public DateTime FechaEgreso { get; set; }
         public string Observaciones { get; set; }
         public bool Estado { get; set; }
-        public float Precio { get; set; }
+        public Decimal Precio { get; set; }
      
     }
 }

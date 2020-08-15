@@ -176,14 +176,26 @@
                     <thead>
                         <th data-field="Materia" data-sortable="true">Numero de habitacion</th>
                         <th data-field="Apellido" data-sortable="true">Piso</th>
-                        <th data-field="Cuatrimestre" data-sortable="true">Tipo</th>
-                                   </thead>
+                                                <th data-field="Cuatrimestre" data-sortable="true">Tipo</th>
+                        <th data-field="Precio" data-sortable="true">Precio</th>
+                               <th data-field="Descripcion" data-sortable="true">Descripcion</th>
+
+                                  </thead>
                     <tbody>
+                           <%       if(HabitacionLista !=null)
+                        foreach (var item in HabitacionLista)
+            { %>
                         <tr>
-                            <th>Prueba</th>
-                            <th>Pedro</th>
+                           <th ><% = item.Numero%></th>
+                            <th><% = item.Piso%></th>
+                             <th><% = item.Tipo.Nombre%></th>
+                              <th>$ <% = item.Tipo.Precio%></th>
+                        <th><% = item.Descripcion%></th>
+                            
+
 
                         </tr>
+                                          <% } %>
                    </tbody>
                 </table>
             </div>

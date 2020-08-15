@@ -11,10 +11,11 @@ namespace AppHotel
 {
     public partial class HotelABML : System.Web.UI.Page
     {
-
+        public List<Habitacion> HabitacionLista;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            HabitacionNegocio HabitacionNegocio = new HabitacionNegocio();
+            HabitacionLista = HabitacionNegocio.ListarHabitacion();
 
         }
         protected void BtnBuscar_Click(object sender, EventArgs e)
