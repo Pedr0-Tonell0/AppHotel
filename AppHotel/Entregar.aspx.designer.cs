@@ -15,31 +15,22 @@ namespace AppHotel
     {
 
         /// <summary>
-        /// Control LblDNI.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDNI;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control txtNumeroHabitacion.
+        /// Control txtDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroHabitacion;
-
-        /// <summary>
-        /// Control BtnBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBuscar;
+        protected global::System.Web.UI.WebControls.TextBox txtDNI;
 
         /// <summary>
         /// Control LblNombre.
@@ -51,13 +42,13 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Label LblNombre;
 
         /// <summary>
-        /// Control TboxNombre.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TboxNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
         /// Control LblApellido.
@@ -132,13 +123,31 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.TextBox txtCosto;
 
         /// <summary>
-        /// Control LblCP.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCP;
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Control txtFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFinal;
+
+        /// <summary>
+        /// Control Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// Control txtObservaciones.
@@ -150,12 +159,21 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
 
         /// <summary>
-        /// Control BtnParticipar.
+        /// Control BtnEntregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnParticipar;
+        protected global::System.Web.UI.WebControls.Button BtnEntregar;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

@@ -81,6 +81,7 @@
     <Content Include="EmpleadoEliminar.aspx" />
     <Content Include="Entregar.aspx" />
     <Content Include="GerenteCambiarPass.aspx" />
+    <Content Include="HabitacionAlquilada.aspx" />
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HabitacionABML.aspx" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="GerenteCambiarPass.aspx.designer.cs">
       <DependentUpon>GerenteCambiarPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HabitacionAlquilada.aspx.cs">
+      <DependentUpon>HabitacionAlquilada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HabitacionAlquilada.aspx.designer.cs">
+      <DependentUpon>HabitacionAlquilada.aspx</DependentUpon>
     </Compile>
     <Compile Include="HabitacionDisponible.aspx.cs">
       <DependentUpon>HabitacionDisponible.aspx</DependentUpon>
@@ -237,7 +245,6 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

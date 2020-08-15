@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Disponibilidad" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HabitacionDisponible.aspx.cs" Inherits="AppHotel.HabitacionDisponible2" %>
+﻿<%@ Page Title="Alquiladas" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"  CodeBehind="HabitacionAlquilada.aspx.cs" Inherits="AppHotel.HabitacionAlquilada" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -88,7 +88,7 @@
                 <a class="nav-link" href="PrincipalEmpleado.aspx"><i class="fas fa-home"></i> Home</a>
             </li>
          <li class="nav-item active">
-      <a class="nav-link" ><i class="far fa-clock"></i> Alquilar</a>
+      <a class="nav-link" href="HabitacionDisponible.aspx" ><i class="far fa-clock"></i> Alquilar</a>
     </li>
   <li class="nav-item active">
       <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
@@ -98,7 +98,7 @@
     </li>
  
          <li class="nav-item active">
-      <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
+      <a class="nav-link" ><i class="fas fa-bed"></i> Entregar</a>
     </li>
   </ul>
 </nav>
@@ -106,9 +106,9 @@
   <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
 <div class="description">
-                        <label style="font-size: 22px;">Habitaciones disponibles</label>
+                        <label style="font-size: 22px;">Habitaciones alquiladas</label>
                     </div>
-            <div class="fresh-table full-color-orange" style="width: 100%;">
+            <div class="fresh-table full-color-green" style="width: 100%;">
                 <div class="toolbar">
                     <button id="alertBtn" class="btn btn-default">Refrescar</button>
                 </div>
@@ -119,7 +119,7 @@
                                                 <th data-field="Cuatrimestre" data-sortable="true">Tipo</th>
                         <th data-field="Precio" data-sortable="true">Precio por dia</th>
                                <th data-field="Descripcion" data-sortable="true">Descripcion</th>
-                      <th data-field="Alquilar" data-sortable="true">Alquilar</th>
+                      <th data-field="Alquilar" data-sortable="true">Entregar</th>
 
                     </thead>
                     <tbody>
@@ -132,7 +132,7 @@
                              <th><% = item.Tipo.Nombre%></th>
                               <th>$ <% = Math.Truncate(item.Tipo.Precio)%></th>
                         <th><% = item.Descripcion%></th>
-                       <th><a  href="Alquilar.aspx?Habitacion=<% = item.Numero%>"  class="btn btn-dark">Alquilar</a></th>
+                       <th><a  href="Entregar.aspx?Habitacion=<% = item.Numero%>"  class="btn btn-dark">Entregar</a></th>
 
                         </tr>
                                 <% } %>

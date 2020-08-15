@@ -125,6 +125,33 @@ namespace Negocio
             return 0;
         }
 
+        public Decimal BuscarPrecio(Habitacion Habitacion)
+        {
+            TipoHabitacion TipoHabitacion = new TipoHabitacion();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("select t.Precio from TipoHabitacion as t where t.Id= @Tipo");
+                datos.agregarParametro("@Tipo", Habitacion.Tipo.Id);
+                datos.ejecutarLector();
+
+                while (datos.lector.Read())
+                {
+                    TipoHabitacion = new TipoHabitacion();
+                    TipoHabitacion.Precio= datos.lector.GetDecimal(0);
+                    return TipoHabitacion.Precio;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return 0;
+        }
         public bool ModificarHabitacion(Habitacion Habitacion)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -170,6 +197,28 @@ namespace Negocio
 
             return Estado;
         }
+
+        public bool VolverDisponibleHabitacion(int NumeroHabitacion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool Estado = false;
+
+            try
+            {
+                datos.setearQuery("update Habitacion set Estado = 1 where Numero = @Numero;");
+                datos.agregarParametro("@Numero", NumeroHabitacion);
+                datos.ejecutarAccion();
+                Estado = true;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Estado;
+        }
+
 
         public List<Habitacion> ListarHabitacion()
         {
@@ -237,5 +286,40 @@ namespace Negocio
                 datos = null;
             }
         }
+
+        public List<Habitacion> ListarHabitacionAlquilada()
+        {
+            List<Habitacion> Lista = new List<Habitacion>();
+            Habitacion Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Estado=0");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Habitacion();
+                    Aux.Numero = datos.lector.GetInt32(0);
+                    Aux.Piso = datos.lector.GetInt32(1);
+                    Aux.Descripcion = datos.lector.GetString(2);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(3);
+                    Aux.Tipo.Precio = datos.lector.GetDecimal(4);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+        }
+
     }
 }

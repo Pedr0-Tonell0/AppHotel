@@ -94,8 +94,8 @@
       <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
 
-         <li class="nav-item active">
-      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
+           <li class="nav-item active">
+      <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
   </ul>
 </nav>

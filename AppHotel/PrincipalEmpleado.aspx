@@ -32,8 +32,9 @@
                <li class="nav-item active">
       <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
-              <li class="nav-item active">
-      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
+    
+         <li class="nav-item active">
+      <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
 
    <a class="nav-link active"> <i class="fas fa-sign-out-alt"> </i> <asp:Button Text="Cerrar Sesion" ID="Salir"  runat="server" style="background-color:black;color:white;border-color:black;border-bottom-color:black;" OnClick="Salir_Click" /></a>
@@ -89,7 +90,7 @@
                         <h4>Entregar</h4>
                         <h5>Usted va poder registrar la<br /> entrega de la habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
-                                                               <a class="btn btn-dark" href="Entregar.aspx">Ingresar</a>
+                                                               <a class="btn btn-dark" href="HabitacionAlquilada.aspx">Ingresar</a>
                                     </div>
             </div>
               </div>

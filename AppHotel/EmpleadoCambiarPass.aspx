@@ -94,10 +94,9 @@
       <li class="nav-item active">
       <a class="nav-link" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
-
-         <li class="nav-item active">
-      <a class="nav-link" href="Entregar.aspx"><i class="fas fa-bed"></i> Entregar</a>
-    </li>      </ul>
+     <li class="nav-item active">
+      <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
+    </li> </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     

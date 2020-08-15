@@ -110,8 +110,8 @@
       <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
 
-         <li class="nav-item active">
-      <a class="nav-link"><i class="fas fa-bed"></i> Entregar</a>
+           <li class="nav-item active">
+      <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
   </ul>
 </nav>
@@ -131,53 +131,52 @@
                 <h4 style="margin-top:-10px;">Entregar una habitación</h4>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <asp:Label Text="Numero de habitacion" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeyup="validarDNI()" onKeyPress="return soloNumeros(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtNumeroHabitacion" CssClass="form-control" />
-                <p id="MensajeErrorDNI"></p>
-            </div>
-            <div class="form-group col-md-3">
-                <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="margin-top: 33px; margin-left: 10px;background-color:black;" runat="server"  disabled="true"  />
-            </div>
-        </div>
         <div class="form-row " style="margin-top: 10px;">
             <div class="form-group col-md-3">
+                <asp:Label Text="DNI" ID="Label2" ClientIDMode="Static" runat="server" CssClass="control-label " />
+                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtDNI" ReadOnly="true" CssClass="form-control" />
+            </div>
+            <div class="form-group col-md-3">
                 <asp:Label Text="Nombre" ID="LblNombre" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="TboxNombre" CssClass="form-control" />
-                <p id="MensajeErrorNombre"></p>
+                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtNombre" ReadOnly="true" CssClass="form-control" />
             </div>
             <div class="form-group col-md-3">
                 <asp:Label Text="Fecha de ingreso" ID="LblApellido" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtFechaIngreso" CssClass="form-control" />
-                <p id=""></p>
+                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtFechaIngreso" ReadOnly="true" CssClass="form-control" />
             </div>
-             <div class="form-group col-md-3">
-                <asp:Label Text="Fecha de egreso" ID="Label1" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtFechaEgreso" CssClass="form-control" />
-                <p id="MensajeErrorApellido"></p>
-            </div>
+             
         </div>
                 <div class="form-row" style="margin-top: 10px;">
-            <div class="form-group col-md-5">
-                <asp:Label Text="Dias" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="40" Style="margin-top: 10px;" ID="TxtDias" ClientIDMode="Static"  CssClass="form-control " />
-                <p id="MensajeErrorDireccion"></p>
-            </div>
-            <div class="form-group col-md-">
-                <asp:Label Text="Costo" ID="LblCiudad" runat="server" ClientIDMode="Static" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtCosto"  CssClass="form-control" />
-                <p id="MensajeErrorCiudad"></p>
+                    <div class="form-group col-md-3">
+                <asp:Label Text="Fecha de egreso" ID="Label1" ClientIDMode="Static" runat="server" CssClass="control-label " />
+                <asp:TextBox runat="server" onkeypress="return soloLetras(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtFechaEgreso" ReadOnly="true" CssClass="form-control" />
             </div>
             <div class="form-group col-md-3">
-                <asp:Label Text="Observaciones" ID="LblCP" runat="server" ClientIDMode="Static" CssClass="control-label " />
-                <asp:TextBox runat="server" onKeyPress="return soloNumeros(event)" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="8" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtObservaciones"  CssClass="form-control" />
-                <p id="MensajeErrorCP"></p>
+                <asp:Label Text="Dias" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label " />
+                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="40" Style="margin-top: 10px;" ID="TxtDias" ClientIDMode="Static" ReadOnly="true"  CssClass="form-control " />
             </div>
+            <div class="form-group col-md-3">
+                <asp:Label Text="Precio por dia" ID="LblCiudad" runat="server" ClientIDMode="Static" CssClass="control-label " />
+                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtCosto" ReadOnly="true" CssClass="form-control" />
+            </div>
+     
         </div>
+                             <div class="form-row" style="margin-top: 10px;">
+                                   <div class="form-group col-md-3">
+                <asp:Label Text="Precio final" ID="Label4" runat="server" ClientIDMode="Static" CssClass="control-label " />
+                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="20" Style="margin-top: 10px;" ClientIDMode="Static" ID="txtFinal" ReadOnly="true" CssClass="form-control" />
+            </div>
+                                 <div class="form-group col-md-5">
+                <asp:Label Text="Observaciones" ID="Label3" runat="server" ClientIDMode="Static" CssClass="control-label " />
+                 <asp:TextBox id="txtObservaciones" CssClass="form-control" TextMode="multiline" Columns="30" Rows="3" runat="server" style="margin-top:10px; margin-right:160px;" />
+            </div>
+</div>
         <div>
-<asp:Button Text="Entregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnParticipar" runat="server"  disabled="true" />
+<asp:Button Text="Entregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnEntregar" runat="server" OnClick="BtnEntregar_Click"   />
    </div>
+             <br />
+                          <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
+
             </div>
     
  </section>

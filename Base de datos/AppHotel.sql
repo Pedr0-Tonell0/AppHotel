@@ -57,4 +57,3 @@ insert into TipoHabitacion (Id,Nombre,Precio) VALUES (3,'Compartida',800);
 insert into TipoHabitacion (Id,Nombre,Precio) VALUES (4,'Suite',6000);
 insert into Usuario (Usuario,Contraseña,Dni) values ('40403031.bulldog',40403031,40403031)
 insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40403031,1,1)
-
