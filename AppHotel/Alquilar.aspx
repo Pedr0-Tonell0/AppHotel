@@ -81,6 +81,8 @@
 <script src="js/gsdk-switch.js"></script>
 <script src="js/jquery.sharrre.js"></script>
 <script src="js/demo.js"></script>
+     <script src="js/Validaciones.js"></script>
+
            <%@ Import Namespace="Dominio" %>  
     <%@ Import Namespace="Negocio" %>  
     </asp:Content>
@@ -134,7 +136,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <asp:Label Text="DNI" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onfocus="Seleccionar(this.id)" onkeyup="validarDNI()" onKeyPress="return soloNumeros(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtDNI" CssClass="form-control"  />
+                <asp:TextBox runat="server"  onkeypress="return SoloInt(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtDNI" CssClass="form-control"  />
                 <p id="MensajeErrorDNI"></p>
             </div>
             <div class="form-group col-md-3">

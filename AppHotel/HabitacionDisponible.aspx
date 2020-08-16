@@ -131,7 +131,7 @@
                             <th><% = item.Piso%></th>
                              <th><% = item.Tipo.Nombre%></th>
                               <th>$ <% = Math.Truncate(item.Tipo.Precio)%></th>
-                        <th><% = item.Descripcion%></th>
+                        <th><% = item.Tipo.Descripcion%></th>
                        <th><a  href="Alquilar.aspx?Habitacion=<% = item.Numero%>"  class="btn btn-dark">Alquilar</a></th>
 
                         </tr>

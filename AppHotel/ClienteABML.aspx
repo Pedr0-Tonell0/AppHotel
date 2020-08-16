@@ -65,6 +65,8 @@
 <script src="js/gsdk-switch.js"></script>
 <script src="js/jquery.sharrre.js"></script>
 <script src="js/demo.js"></script>
+     <script src="js/Validaciones.js"></script>
+
            <%@ Import Namespace="Dominio" %>  
     <%@ Import Namespace="Negocio" %>  
     </asp:Content>

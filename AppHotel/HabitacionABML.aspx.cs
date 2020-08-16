@@ -39,14 +39,12 @@ namespace AppHotel
                 if (Habitacion != null)
                 {
                     txtNumeroHabitacion.Text =Habitacion.Numero.ToString();
-                    txtDescripcion.Text = Habitacion.Descripcion;
                     txtTipo.SelectedValue = Habitacion.Tipo.Id.ToString();
                     ddlPiso.SelectedValue = Habitacion.Piso.ToString();
                 }
                 else if (Habitacion == null)
                 {
                     txtNumeroHabitacion.Text = "";
-                    txtDescripcion.Text = "";
                     txtTipo.Text = "";
                     ddlPiso.Text = "";
 
@@ -75,10 +73,9 @@ namespace AppHotel
                     HabitacionNegocio = new HabitacionNegocio();
                     Habitacion.Numero = int.Parse(txtNumeroHabitacion.Text);
                     Habitacion.Piso = int.Parse(ddlPiso.SelectedValue);
-                    Habitacion.Descripcion = txtDescripcion.Text;
                     Habitacion.Tipo = new TipoHabitacion();
                     Habitacion.Tipo.Id = int.Parse(txtTipo.SelectedValue);
-                    if (txtNumeroHabitacion.Text == "" || ddlPiso.SelectedValue == "" || txtDescripcion.Text == "" || txtTipo.SelectedValue == "")
+                    if (txtNumeroHabitacion.Text == "" || ddlPiso.SelectedValue == "" ||  txtTipo.SelectedValue == "")
                     {
                         lblMensaje.Text = "Hay campos vacios.";
 
@@ -90,7 +87,6 @@ namespace AppHotel
                         {
                             lblMensaje.Text = "Habitacion agregada correctamente";
                             txtNumeroHabitacion.Text = "";
-                            txtDescripcion.Text = "";
                             txtTipo.Text = "";
                             ddlPiso.Text = "";
                         }
@@ -107,10 +103,9 @@ namespace AppHotel
                     HabitacionNegocio = new HabitacionNegocio();
                     Habitacion.Numero = int.Parse(txtNumeroHabitacion.Text);
                     Habitacion.Piso = int.Parse(ddlPiso.SelectedValue);
-                    Habitacion.Descripcion = txtDescripcion.Text;
                     Habitacion.Tipo = new TipoHabitacion();
                     Habitacion.Tipo.Id = int.Parse(txtTipo.SelectedValue);
-                    if (txtNumeroHabitacion.Text == "" || ddlPiso.SelectedValue == "" || txtDescripcion.Text == "" || txtTipo.SelectedValue == "")
+                    if (txtNumeroHabitacion.Text == "" || ddlPiso.SelectedValue == "" ||  txtTipo.SelectedValue == "")
                     {
                         lblMensaje.Text = "Hay campos vacios.";
 
@@ -122,7 +117,6 @@ namespace AppHotel
                         {
                             lblMensaje.Text = "Habitacion modificada correctamente";
                             txtNumeroHabitacion.Text = "";
-                            txtDescripcion.Text = "";
                             txtTipo.Text = "";
                             ddlPiso.Text = "";
                         }

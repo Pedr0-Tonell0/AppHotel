@@ -19,7 +19,6 @@ Estado bit null
 create table Habitacion(
 Numero int primary key,
 Piso int null,
-Descripcion varchar(150) null,
 Estado bit null,
 Tipo int null
 )
@@ -27,14 +26,16 @@ Tipo int null
 create table TipoHabitacion(
 Id int primary key,
 Nombre varchar(50) null,
-Precio money null
+Precio money null,
+Descripcion varchar(200) null,
 )
 
 create table Alquiler(
 Id int identity primary key,
 NumeroHabitacion int null,
 DniCliente int null,
-DniEmpleado int null,
+DniEmpleadoAlquila int null,
+DniEmpleadoEntrega int null,
 FechaIngreso date null,
 FechaEgreso date null,
 Observaciones varchar(150) null,
@@ -50,10 +51,14 @@ Dni int primary key
 
 
 
+insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (1,'Matrimonial',1500,'Habitación de lujo y un elegante baño con ducha emocional.');
+insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (2,'Familiar',3000,'Suite de 30 m² para un alojamiento elegante y confortable para 4 personas con jacuzzi circular, baño de hidromasaje y ducha con cascada emocional, ideal para familias.');
+insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (3,'Compartida',800,'Alojamiento confortable con baño compartido.');
+insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (4,'Suite',6000,'Ambiente inolvidable y romántica, decorado con estilo y gusto, baño con ducha de cromoterapia, y jacuzzi.');
+insert into Usuario (Usuario,Contraseña,Dni) values ('40391972.bulldog',40391972,40391972)
+insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40391972,1,1)
 
-insert into TipoHabitacion (Id,Nombre,Precio) VALUES (1,'Matrimonial',1500);
-insert into TipoHabitacion (Id,Nombre,Precio) VALUES (2,'Familiar',3000);
-insert into TipoHabitacion (Id,Nombre,Precio) VALUES (3,'Compartida',800);
-insert into TipoHabitacion (Id,Nombre,Precio) VALUES (4,'Suite',6000);
-insert into Usuario (Usuario,Contraseña,Dni) values ('40403031.bulldog',40403031,40403031)
-insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40403031,1,1)
+
+
+
+

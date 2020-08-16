@@ -52,9 +52,11 @@ namespace AppHotel
                 AlquilerNegocio AlquilerNegocio = new AlquilerNegocio();
                 Habitacion Habitacion = new Habitacion();
                 HabitacionNegocio HabitacionNegocio = new HabitacionNegocio();
+                Empleado Empleado = new Empleado();
                 bool Estado1;
                 bool Estado2;
                 int NumeroHabitacion = Convert.ToInt32(Request.QueryString["Habitacion"]);
+                Empleado = (Empleado)Session["EmpleadoLogueado"];
                 Alquilar = AlquilerNegocio.BuscarAlquiler(NumeroHabitacion);
                 Alquilar.Observaciones = txtObservaciones.Text;
                 Alquilar.FechaEgreso = System.DateTime.Now;
@@ -63,7 +65,7 @@ namespace AppHotel
                 Habitacion = HabitacionNegocio.BuscarHabitacion(NumeroHabitacion);
                 Decimal Precio = HabitacionNegocio.BuscarPrecio(Habitacion);
                 Alquilar.Precio = Convert.ToInt32(Precio) * Days;
-                Estado1 = AlquilerNegocio.EntregarHabitacion(Alquilar);
+                Estado1 = AlquilerNegocio.EntregarHabitacion(Alquilar,Empleado.Dni);
                 Estado2 = HabitacionNegocio.VolverDisponibleHabitacion(NumeroHabitacion);
                 if (Estado1 == true && Estado2 == true)
                 {

@@ -65,6 +65,8 @@
     <script src="js/gsdk-switch.js"></script>
     <script src="js/jquery.sharrre.js"></script>
     <script src="js/demo.js"></script>
+     <script src="js/Validaciones.js"></script>
+
             <%@ Import Namespace="Dominio" %>  
     <%@ Import Namespace="Negocio" %>  
 </asp:Content>
@@ -119,7 +121,7 @@
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <asp:Label Text="Numero de habitación" ID="LblDNI" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                    <asp:TextBox runat="server" onfocus="Seleccionar(this.id)"  onkeypress="return SoloInt(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtNumeroHabitacion" CssClass="form-control" />
+                    <asp:TextBox runat="server" onkeypress="return SoloInt(event)" MaxLength="8" ClientIDMode="Static" Style="margin-top: 10px;" ID="txtNumeroHabitacion" CssClass="form-control" />
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Button Text="Buscar" ID="BtnBuscar" ClientIDMode="Static" class="btn btn-dark" autoposback="false" Style="background-color:black;margin-left: 10px;margin-top:27px;" runat="server" OnClick="BtnBuscar_Click" />
@@ -151,16 +153,7 @@
                         </div>
              
             </div>
-                           
-
-             
-                
-             
-            <div class="form-row" style="margin-top: 10px;">
-                                    <asp:Label Text="Descripcion" style="margin-left: 5px;" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label "  />
-
-                 <asp:TextBox id="txtDescripcion" CssClass="form-control" TextMode="multiline" Columns="30" Rows="3" runat="server" style="margin-top:10px; margin-right:160px;" />
-                </div>
+      
             <div>
                 <asp:Button Text="Agregar" Style="margin-top: 20px; background-color: black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
                                   <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
@@ -194,7 +187,7 @@
                             <th><% = item.Piso%></th>
                              <th><% = item.Tipo.Nombre%></th>
                               <th>$ <% = Math.Truncate(item.Tipo.Precio)%></th>
-                        <th><% = item.Descripcion%></th>
+                        <th><% = item.Tipo.Descripcion%></th>
                             
 
 

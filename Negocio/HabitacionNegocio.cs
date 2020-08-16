@@ -46,10 +46,9 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("insert into Habitacion (Numero,Piso,Descripcion,Tipo,Estado)values(@Numero,@Piso,@Descripcion,@Tipo,@Estado)");
+                datos.setearQuery("insert into Habitacion (Numero,Piso,Tipo,Estado)values(@Numero,@Piso,@Tipo,@Estado)");
                 datos.agregarParametro("@Numero", Habitacion.Numero);
                 datos.agregarParametro("@Piso", Habitacion.Piso);
-                datos.agregarParametro("@Descripcion", Habitacion.Descripcion);
                 datos.agregarParametro("@Tipo", Habitacion.Tipo.Id);
                 datos.agregarParametro("@Estado", true);
 
@@ -72,7 +71,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Id from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Numero= " + NumeroHabitacion);
+                datos.setearQuery("select h.Numero,h.Piso,t.Id from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Numero= " + NumeroHabitacion);
                 datos.ejecutarLector();
 
                 if (datos.lector.Read())
@@ -80,9 +79,8 @@ namespace Negocio
                     Habitacion = new Habitacion();
                     Habitacion.Numero = datos.lector.GetInt32(0);
                     Habitacion.Piso = datos.lector.GetInt32(1);
-                    Habitacion.Descripcion = datos.lector.GetString(2);
                     Habitacion.Tipo = new TipoHabitacion();
-                    Habitacion.Tipo.Id = datos.lector.GetInt32(3);
+                    Habitacion.Tipo.Id = datos.lector.GetInt32(2);
                     return Habitacion;
                 }
             }
@@ -159,11 +157,10 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("update Habitacion set Piso = @Piso where Numero = @Numero;update Habitacion set Descripcion = @Descripcion where Numero = @Numero;update Habitacion set Tipo = @Tipo where Numero = @Numero;");
+                datos.setearQuery("update Habitacion set Piso = @Piso where Numero = @Numero;update Habitacion set Tipo = @Tipo where Numero = @Numero;");
 
                 datos.agregarParametro("@Numero", Habitacion.Numero);
                 datos.agregarParametro("@Piso", Habitacion.Piso);
-                datos.agregarParametro("@Descripcion", Habitacion.Descripcion);
                 datos.agregarParametro("@Tipo", Habitacion.Tipo.Id);
                 datos.ejecutarAccion();
                 Estado = true;
@@ -228,15 +225,15 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo");
+                datos.setearQuery("select h.Numero,h.Piso,t.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
                     Aux = new Habitacion();
                     Aux.Numero = datos.lector.GetInt32(0);
                     Aux.Piso = datos.lector.GetInt32(1);
-                    Aux.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo.Nombre = datos.lector.GetString(3);
                     Aux.Tipo.Precio = datos.lector.GetDecimal(4);
                     Lista.Add(Aux);
@@ -261,15 +258,15 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Estado=1");
+                datos.setearQuery("select h.Numero,h.Piso,t.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Estado=1");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
                     Aux = new Habitacion();
                     Aux.Numero = datos.lector.GetInt32(0);
                     Aux.Piso = datos.lector.GetInt32(1);
-                    Aux.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo.Nombre = datos.lector.GetString(3);
                     Aux.Tipo.Precio = datos.lector.GetDecimal(4);
                     Lista.Add(Aux);
@@ -295,15 +292,15 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("select h.Numero,h.Piso,h.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Estado=0");
+                datos.setearQuery("select h.Numero,h.Piso,t.Descripcion,t.Nombre,t.Precio from Habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo where h.Estado=0");
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
                     Aux = new Habitacion();
                     Aux.Numero = datos.lector.GetInt32(0);
                     Aux.Piso = datos.lector.GetInt32(1);
-                    Aux.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Descripcion = datos.lector.GetString(2);
                     Aux.Tipo.Nombre = datos.lector.GetString(3);
                     Aux.Tipo.Precio = datos.lector.GetDecimal(4);
                     Lista.Add(Aux);

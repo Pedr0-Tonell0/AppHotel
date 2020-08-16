@@ -15,7 +15,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("insert into Alquiler (NumeroHabitacion,DniCliente,DniEmpleado,FechaIngreso,Estado) values (@Numero,@DniC,@DniE,@FechaI,@Estado)");
+                datos.setearQuery("insert into Alquiler (NumeroHabitacion,DniCliente,DniEmpleadoAlquila,FechaIngreso,Estado) values (@Numero,@DniC,@DniE,@FechaI,@Estado)");
                 datos.agregarParametro("@Numero", NumeroHabitacion);
                 datos.agregarParametro("@DniC", DniCliente);
                 datos.agregarParametro("@DniE", DniEmpleado);
@@ -64,18 +64,19 @@ namespace Negocio
             return null;
         }
 
-        public bool EntregarHabitacion(Alquilar Alquilar)
+        public bool EntregarHabitacion(Alquilar Alquilar, int DNI)
         {
             AccesoDatos datos = new AccesoDatos();
             bool Estado = false;
 
             try
             {
-                datos.setearQuery("update Alquiler set FechaEgreso = @FechaE where Id=@Id;update Alquiler set Observaciones=@Obs where Id=@Id; update Alquiler set Precio=@Precio where Id=@Id; update Alquiler set Estado=0 where Id=@Id;");
+                datos.setearQuery("update Alquiler set FechaEgreso = @FechaE where Id=@Id;update Alquiler set Observaciones=@Obs where Id=@Id; update Alquiler set Precio=@Precio where Id=@Id; update Alquiler set Estado=0 where Id=@Id;update Alquiler set DniEmpleadoEntrega=@Dni where Id=@Id;");
                 datos.agregarParametro("@Id", Alquilar.Id);
                 datos.agregarParametro("@FechaE", Alquilar.FechaEgreso);
                 datos.agregarParametro("@Obs", Alquilar.Observaciones);
                 datos.agregarParametro("@Precio", Alquilar.Precio);
+                datos.agregarParametro("@Dni", DNI);
                 datos.ejecutarAccion();
                 Estado = true;
 
