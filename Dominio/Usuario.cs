@@ -14,6 +14,9 @@ namespace Dominio
 
         public int Dni { get; set; }
 
+        public bool Estado { get; set; }
+
+
     }
 
 }

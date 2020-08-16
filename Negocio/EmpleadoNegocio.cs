@@ -102,7 +102,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("insert into Usuario (Dni,Usuario,Contraseña)values(@DNI,@Usuario,@Contraseña)");
+                datos.setearQuery("insert into Usuario (Dni,Usuario,Contraseña,Estado)values(@DNI,@Usuario,@Contraseña,0)");
                 datos.agregarParametro("@DNI", Empleado.Dni);
                 datos.agregarParametro("@Usuario", Empleado.Dni + ".bulldog");
                 datos.agregarParametro("@Contraseña", Empleado.Dni);
@@ -148,7 +148,7 @@ namespace Negocio
             bool Estado = false;
             try
             {
-                datos.setearQuery("update Empleado set Estado = 0 where Dni = @DNI;");
+                datos.setearQuery("update Empleado set Estado = 0 where Dni = @DNI; update Usuario set Estado = 1 where Dni = @DNI");
 
                 datos.agregarParametro("@DNI", Dni);
 

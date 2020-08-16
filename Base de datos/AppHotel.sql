@@ -46,7 +46,8 @@ Estado bit null
 create table Usuario(
 Usuario varchar(50) null,
 Contraseña varchar(50) null,
-Dni int primary key
+Dni int primary key,
+Estado bit null
 )
 
 
@@ -55,8 +56,6 @@ insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (1,'Matrimonial
 insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (2,'Familiar',3000,'Suite de 30 m² para un alojamiento elegante y confortable para 4 personas con jacuzzi circular, baño de hidromasaje y ducha con cascada emocional, ideal para familias.');
 insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (3,'Compartida',800,'Alojamiento confortable con baño compartido.');
 insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (4,'Suite',6000,'Ambiente inolvidable y romántica, decorado con estilo y gusto, baño con ducha de cromoterapia, y jacuzzi.');
-insert into Usuario (Usuario,Contraseña,Dni) values ('40391972.bulldog',40391972,40391972)
+insert into Usuario (Usuario,Contraseña,Dni,Estado) values ('40391972.bulldog',40391972,40391972,0)
 insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40391972,1,1)
-
-
 

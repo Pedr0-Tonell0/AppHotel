@@ -14,7 +14,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("Select u.Dni, u.Usuario, u.Contraseña from Usuario as u where u.Usuario = @Usuario and u.Contraseña = @Contraseña" );
+                datos.setearQuery("Select u.Dni, u.Usuario, u.Contraseña,u.Estado from Usuario as u where u.Usuario = @Usuario and u.Contraseña = @Contraseña" );
                 datos.agregarParametro("@Usuario", User);
                 datos.agregarParametro("@Contraseña", Pass);
                 datos.ejecutarLector();
@@ -25,6 +25,8 @@ namespace Negocio
                     Usuario.Dni = datos.lector.GetInt32(0);
                     Usuario.User = datos.lector.GetString(1);
                     Usuario.Pass= datos.lector.GetString(2);
+                    Usuario.Estado = datos.lector.GetBoolean(3);
+
                     return Usuario;
                 }
             }

@@ -30,14 +30,20 @@ namespace AppHotel
                     lblMensaje.Text = "Hay campos vacios.";
 
                 }
-                if (UsuarioNegocio.BuscarUsuario(Usuario.User, Usuario.Pass) == null)
+                User = UsuarioNegocio.BuscarUsuario(Usuario.User, Usuario.Pass);
+
+                if (User == null )
                 {
                     lblMensaje.Text = "Usuario o contraseña incorrecta.";
 
                 }
-                else
+                if (User.Estado ==true)
                 {
-                    User = UsuarioNegocio.BuscarUsuario(Usuario.User, Usuario.Pass);
+                    lblMensaje.Text = "El usuario ingresado fue dado de baja.";
+
+                }
+                if (User != null && User.Estado==false)
+                {
                     EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
                     Empleado Empleado = new Empleado();
                     Empleado = EmpleadoNegocio.BuscarEmpleadoUsuario(User.Dni);
