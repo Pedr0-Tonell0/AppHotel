@@ -318,5 +318,37 @@ namespace Negocio
             }
         }
 
+        public List<Habitacion> ListarTipoHabitacionPrecio()
+        {
+            List<Habitacion> Lista = new List<Habitacion>();
+            Habitacion Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("select t.Nombre,t.Precio,(select count (h1.numero) from Habitacion as h1 inner join TipoHabitacion as t1 on t1.Id=h1.Tipo where Estado=1 and t1.Id=t.Id) as disponibles,(select count (h1.numero) from Habitacion as h1 inner join TipoHabitacion as t1 on t1.Id=h1.Tipo where Estado=0 and t1.Id=t.Id) as alquiladas from TipoHabitacion as t ");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Habitacion();
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(0);
+                    Aux.Tipo.Precio = datos.lector.GetDecimal(1);
+                    Aux.Tipo.Disponibles = datos.lector.GetInt32(2);
+                    Aux.Tipo.Alquiladas = datos.lector.GetInt32(3);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+        }
     }
 }

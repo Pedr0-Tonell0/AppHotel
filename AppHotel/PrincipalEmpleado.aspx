@@ -36,6 +36,10 @@
          <li class="nav-item active">
       <a class="nav-link" href="HabitacionAlquilada.aspx"><i class="fas fa-bed"></i> Entregar</a>
     </li>
+            
+             <li class="nav-item active">
+      <a class="nav-link" href="HabitacionTipoPrecio.aspx"><i class="fas fa-dollar-sign"></i> Precios</a>
+    </li>
 
    <a class="nav-link active"> <i class="fas fa-sign-out-alt"> </i> <asp:Button Text="Cerrar Sesion" ID="Salir"  runat="server" style="background-color:black;color:white;border-color:black;border-bottom-color:black;" OnClick="Salir_Click" /></a>
 
@@ -91,6 +95,16 @@
                         <h5>Usted va poder registrar la<br /> entrega de la habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
                                                                <a class="btn btn-dark" href="HabitacionAlquilada.aspx">Ingresar</a>
+                                    </div>
+            </div>
+                   <div class="col-md-4 col-sm-12 col-12">
+                <div class="serv-section-2 serv-section-2-act">
+                    <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-dollar-sign"></i> </div>
+                    <div class="serv-section-desc">
+                        <h4>Precios</h4>
+                        <h5>Usted va poder ver los precios  y cantidad de habitaciones disponibles</h5> </div>
+                    <div class="section-heading-line-left"></div>
+                                                               <a class="btn btn-dark" href="HabitacionTipoPrecio.aspx">Ingresar</a>
                                     </div>
             </div>
               </div>

@@ -10,6 +10,10 @@ namespace Dominio
     {
         public int Id { get; set; }
 
+        public int Alquiladas{ get; set; }
+
+        public int Disponibles { get; set; }
+
         public string Nombre { get; set; }
 
         public Decimal Precio { get; set; }
