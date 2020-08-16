@@ -89,5 +89,92 @@ namespace Negocio
             return Estado;
         }
 
+        public List<Alquilar> ListarAlquilerFinalizado()
+        {
+            List<Alquilar> Lista = new List<Alquilar>();
+            Alquilar Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("Select a.FechaEgreso,a.FechaIngreso,a.Precio,a.DniEmpleadoAlquila,a.DniEmpleadoEntrega,c.Dni,c.Nombre,h.Numero,h.Piso,t.Nombre,t.Descripcion,t.Precio from habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo inner join Alquiler as a on a.NumeroHabitacion=h.Numero inner join Cliente as c on c.Dni=a.DniCliente where a.Estado=0");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Alquilar();
+                    Aux.FechaEgreso = datos.lector.GetDateTime(0);
+                    Aux.FechaIngreso = datos.lector.GetDateTime(1);
+                    Aux.Precio = datos.lector.GetDecimal(2);
+                    Aux.Empleado = new Empleado();
+                    Aux.Empleado.Dni= datos.lector.GetInt32(3);
+                    Aux.Empleado2 = new Empleado();
+                    Aux.Empleado2.Dni = datos.lector.GetInt32(4);
+                    Aux.Cliente = new Cliente();
+                    Aux.Cliente.Dni = datos.lector.GetInt32(5);
+                    Aux.Cliente.Nombre = datos.lector.GetString(6);
+                    Aux.Habitacion = new Habitacion();
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(7);
+                    Aux.Habitacion.Piso= datos.lector.GetInt32(8);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(9);
+                    Aux.Tipo.Descripcion = datos.lector.GetString(10);
+                    Aux.Tipo.Precio = datos.lector.GetDecimal(11);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
+
+        public List<Alquilar> ListarAlquilerEjecucion()
+        {
+            List<Alquilar> Lista = new List<Alquilar>();
+            Alquilar Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("Select a.FechaIngreso,a.DniEmpleadoAlquila,c.Dni,c.Nombre,h.Numero,h.Piso,t.Nombre,t.Descripcion,t.Precio from habitacion as h inner join TipoHabitacion as t on t.Id=h.Tipo inner join Alquiler as a on a.NumeroHabitacion=h.Numero inner join Cliente as c on c.Dni=a.DniCliente where a.Estado=1");
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Alquilar();
+                    Aux.FechaIngreso = datos.lector.GetDateTime(0);
+                    Aux.Empleado = new Empleado();
+                    Aux.Empleado.Dni = datos.lector.GetInt32(1);
+                    Aux.Cliente = new Cliente();
+                    Aux.Cliente.Dni = datos.lector.GetInt32(2);
+                    Aux.Cliente.Nombre = datos.lector.GetString(3);
+                    Aux.Habitacion = new Habitacion();
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(4);
+                    Aux.Habitacion.Piso = datos.lector.GetInt32(5);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(6);
+                    Aux.Tipo.Descripcion = datos.lector.GetString(7);
+                    Aux.Tipo.Precio = datos.lector.GetDecimal(8);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
     }
 }

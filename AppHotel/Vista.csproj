@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Alquilar.aspx" />
     <Content Include="AlquilerLista.aspx" />
+    <Content Include="AlquilerListaFinalizado.aspx" />
+    <Content Include="AlquilerListaHome.aspx" />
     <Content Include="ClienteABML.aspx" />
     <Content Include="ClienteEliminar.aspx" />
     <Content Include="css\demo.css" />
@@ -109,6 +111,20 @@
     </Compile>
     <Compile Include="AlquilerLista.aspx.designer.cs">
       <DependentUpon>AlquilerLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlquilerListaFinalizado.aspx.cs">
+      <DependentUpon>AlquilerListaFinalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlquilerListaFinalizado.aspx.designer.cs">
+      <DependentUpon>AlquilerListaFinalizado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlquilerListaHome.aspx.cs">
+      <DependentUpon>AlquilerListaHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlquilerListaHome.aspx.designer.cs">
+      <DependentUpon>AlquilerListaHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClienteABML.aspx.cs">
       <DependentUpon>ClienteABML.aspx</DependentUpon>

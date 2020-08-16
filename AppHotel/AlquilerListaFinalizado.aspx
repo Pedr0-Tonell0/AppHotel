@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Alquileres" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AlquilerLista.aspx.cs" Inherits="AppHotel.AlquilerLista" %>
+﻿<%@ Page Title="Alquileres" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"CodeBehind="AlquilerListaFinalizado.aspx.cs" Inherits="AppHotel.AlquilerListaFinalizado" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <html lang="en">
 <head>
@@ -126,16 +126,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
    <div class="row">
-				<div class="col-md-12 col-md-offset-2" style="margin-left: 5%;margin-top:-20px;">
+				<div class="col-md-12 col-md-offset-2" style="margin-left: 1%;margin-top:-20px;">
 					<div class="description">
-						<label style="font-size: 22px;margin-left: -5%;">Alquileres en ejecución</label>
+						<label style="font-size: 22px;">Alquileres finalizados</label>
 					</div>
 
-					<div class="fresh-table full-color-green" style="width: 90%;">
+					<div class="fresh-table full-color-blue" style="width: 98%;">
 
 						<table id="fresh-table" class="table">
-							<thead>
-								  <th data-field="nombre" data-sortable="true">Nombre</th>
+							 <thead>
+                        <th data-field="nombre" data-sortable="true">Nombre</th>
                         <th data-field="dni" data-sortable="true">Dni</th>
                         <th data-field="tipo" data-sortable="true">Tipo</th>
                         <th data-field="numero" data-sortable="true">Numero</th>
@@ -143,10 +143,12 @@
                                              <th data-field="descripcion" data-sortable="true">Descripcion</th>
                         <th data-field="precioxdia" data-sortable="true">Precio por dia</th>
                         <th data-field="fechai" data-sortable="true">Fecha ingreso</th>
-                       <th data-field="empi" data-sortable="true">Empleado registro ingreso </th>
-
-							</thead>
-							<tbody>
+                        <th data-field="fechae" data-sortable="true">Fecha egreso</th>
+                        <th data-field="preciof" data-sortable="true">Precio Final</th>
+                       <th data-field="empi" data-sortable="true">Empleado Ingreso </th>
+                      <th data-field="empe" data-sortable="true">Empleado Egreso</th>
+                    </thead>
+                    <tbody>
                          <%       if(ListaAlquilar !=null)
                         foreach (var item in ListaAlquilar)
             { %>
@@ -159,7 +161,11 @@
                             <th><% = item.Tipo.Descripcion%></th>
                             <th>$  <% = Math.Truncate(item.Tipo.Precio)%></th>
                             <th><% = item.FechaIngreso.ToString("dd/MM/yyyy")%></th>
+                            <th><% = item.FechaEgreso.ToString("dd/MM/yyyy")%></th>
+                            <th>$ <% =Math.Truncate(item.Precio)%></th>
                             <th><% = item.Empleado.Dni%></th>
+                            <th><% = item.Empleado2.Dni%></th>
+
                         </tr>
                     <% } %>
                     </tbody>
@@ -247,5 +253,4 @@
     ga('create', 'UA-46172202-1', 'auto')
     ga('send', 'pageview')
 </script>
-  
     </asp:Content>

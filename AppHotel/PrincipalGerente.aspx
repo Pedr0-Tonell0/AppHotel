@@ -25,7 +25,7 @@
                 <a class="nav-link"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+                <a class="nav-link" href="AlquilerListaHome.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
             </li>
                     <li class="nav-item active">
       <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
@@ -47,7 +47,7 @@
     <div class="section-block-grey" style="margin-top: -80px;">
         <div class="container">
             <div class="row mt-60">
-                <div class="col-md-4 col-sm-12 col-12">
+                <div class="col-md-4 col-sm-12 col-12" >
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="serv-section-desc">
@@ -55,7 +55,7 @@
                             <h5>Va poder ver los alquileres<br /> que registro cada empleado.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
-                        <a class="btn btn-dark" href="AlquilerLista.aspx">Ingresar</a>
+                        <a class="btn btn-dark" href="AlquilerListaHome.aspx">Ingresar</a>
                     </div>
                 </div>
                      <div class="col-md-4 col-sm-12 col-12">

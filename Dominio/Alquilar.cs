@@ -10,8 +10,13 @@ namespace Dominio
     {
         public int Id { get; set; }
         public Habitacion Habitacion { get; set; }
+        public TipoHabitacion Tipo { get; set; }
+
         public Cliente Cliente { get; set; }
         public Empleado Empleado { get; set; }
+
+        public Empleado Empleado2 { get; set; }
+
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaEgreso { get; set; }
         public string Observaciones { get; set; }

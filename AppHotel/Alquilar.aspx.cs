@@ -41,6 +41,7 @@ namespace AppHotel
                     }
                     else if (Cliente == null)
                     {
+                        lblMensaje.Text = "Error el cliente no se encuentra registrado.";
                         txtDNI.Text = "";
                         txtNombre.Text = "";
                         txtEmail.Text = "";

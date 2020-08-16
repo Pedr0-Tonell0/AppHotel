@@ -87,7 +87,7 @@
                 <a class="nav-link" href="PrincipalGerente.aspx"><i class="fas fa-home"></i> Home</a>
             </li>
            <li class="nav-item active">
-      <a class="nav-link" href="AlquilerLista.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+      <a class="nav-link" href="AlquilerListaHome.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
     </li>
                     <li class="nav-item active">
       <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>

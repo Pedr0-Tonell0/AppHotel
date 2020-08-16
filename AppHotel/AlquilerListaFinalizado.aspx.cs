@@ -9,14 +9,15 @@ using Negocio;
 
 namespace AppHotel
 {
-    public partial class AlquilerLista : System.Web.UI.Page
+    public partial class AlquilerListaFinalizado : System.Web.UI.Page
     {
         public List<Alquilar> ListaAlquilar;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             AlquilerNegocio AlquilerNegocio = new AlquilerNegocio();
-            ListaAlquilar = AlquilerNegocio.ListarAlquilerEjecucion();
+            ListaAlquilar = AlquilerNegocio.ListarAlquilerFinalizado();
+
         }
     }
 }

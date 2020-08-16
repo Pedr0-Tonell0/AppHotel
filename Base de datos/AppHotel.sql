@@ -60,5 +60,3 @@ insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldo
 
 
 
-
-
