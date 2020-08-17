@@ -36,6 +36,9 @@
     <li class="nav-item active">
       <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
     </li>
+                      <li class="nav-item active">
+      <a class="nav-link" href="HabitacionTipoPrecio2.aspx"><i class="fas fa-dollar-sign"></i> Precios</a>
+    </li>
       <li class="nav-item active">
       <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
     </li>

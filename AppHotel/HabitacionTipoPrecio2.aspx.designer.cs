@@ -11,7 +11,7 @@ namespace AppHotel
 {
 
 
-    public partial class Grafico
+    public partial class HabitacionTipoPrecio2
     {
 
         /// <summary>

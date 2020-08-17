@@ -101,6 +101,9 @@
     <li class="nav-item active">
       <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
     </li>
+                      <li class="nav-item active">
+      <a class="nav-link" href="HabitacionTipoPrecio2.aspx"><i class="fas fa-dollar-sign"></i> Precios</a>
+    </li>
       <li class="nav-item active">
       <a class="nav-link"><i class="fas fa-chart-bar"></i> Reportes</a>
     </li>
@@ -114,6 +117,26 @@
                     <div class="description">
                         <label style="font-size: 22px;">Reporte</label>
                     </div>
+                    <br />
+                     <center><asp:Chart runat="server" ID="Graficos" Palette="None" DataSourceID="SqlDataSource1" BackColor="DarkOrange" BorderlineColor="DimGray" CssClass="center">
+        <Series>
+            <asp:Series Name="Series" ChartType="Pie" ChartArea="ChartArea1" XValueMember="nombre" YValueMembers="CantidadDeReservas" YValuesPerPoint="2"></asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+        </ChartAreas>
+        <Titles>
+            <asp:Title Font="Microsoft Sans Serif, 9.75pt, style=Bold" Name="Title1" Text="Cantidad de reservas por tipo de habitación">
+            </asp:Title>
+        </Titles>
+    </asp:Chart>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppHotelConnectionString %>" SelectCommand="select t.nombre,(select count (h1.tipo) from Habitacion as h1 inner join TipoHabitacion
+as t1 on t1.Id=h1.Tipo
+inner join Alquiler as a
+on a.NumeroHabitacion=h1.Numero
+where t1.Id=t.Id) as CantidadDeReservas
+from TipoHabitacion as t "></asp:SqlDataSource></center>
+                                        <br />
 
                     <div class="div_caja"
                         style="height: auto; background-color: orange;">
@@ -263,4 +286,5 @@
     ga('create', 'UA-46172202-1', 'auto')
     ga('send', 'pageview')
     </script>
+
 </asp:Content>

@@ -35,7 +35,7 @@ namespace AppHotel
                     Cantidad[Contador] = datos.lector.GetDecimal(1);
                     Contador++;
                 }
-                Graficos.Series["Series"].Points.DataBindXY(Nombres, Cantidad);
+                 Graficos.Series["Series"].Points.DataBindXY(Nombres, Cantidad);
             }
             catch (Exception ex)
             {

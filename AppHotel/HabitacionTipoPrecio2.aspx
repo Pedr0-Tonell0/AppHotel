@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Precios" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"  CodeBehind="HabitacionTipoPrecio.aspx.cs" Inherits="AppHotel.HabitacionTipoPrecio" %>
+﻿<%@ Page Title="Precios" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"   CodeBehind="HabitacionTipoPrecio2.aspx.cs" Inherits="AppHotel.HabitacionTipoPrecio2" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -72,39 +72,44 @@
     <%@ Import Namespace="Negocio" %>  
     </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
             <%Empleado Empleado = new Empleado();
-                 Empleado = (Empleado)Session["EmpleadoLogueado"];
-                    if(Empleado == null)
+                Empleado = (Empleado)Session["EmpleadoLogueado"];
+
+                if(Empleado == null)
                 {
                     Response.Redirect("Login.aspx");
                 }
                 %>
-            <li class="nav-item active" style="margin-right: 350px;">
-                                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
+            <li class="nav-item active" style="margin-right: 200px;">
+                <a class="nav-link"><i class="fas fa-paw"></i> Bienvenido, <%=Empleado.Nombre %> </a>
             </li>
                         <li class="nav-item active">
-                <a class="nav-link" href="PrincipalEmpleado.aspx"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link" href="PrincipalGerente.aspx"><i class="fas fa-home"></i> Home</a>
             </li>
-         <li class="nav-item active">
-      <a class="nav-link" href="HabitacionDisponible.aspx" ><i class="far fa-clock"></i> Alquilar</a>
-    </li>
-  <li class="nav-item active">
-      <a class="nav-link" href="ClienteABML.aspx"><i class="fas fa-user-friends"></i> Clientes</a>
-    </li>
-                          <li class="nav-item active">
-      <a class="nav-link" href="EmpleadoCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
-    </li>
- 
-         <li class="nav-item active">
-      <a class="nav-link" href="HabitacionAlquilada.aspx" ><i class="fas fa-bed"></i> Entregar</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="AlquilerListaHome.aspx"><i class="fas fa-shield-alt"></i> Alquileres</a>
+            </li>
+                    <li class="nav-item active">
+      <a class="nav-link" href="GerenteCambiarPass.aspx" ><i class="fas fa-lock"></i> Contraseña</a>
     </li>
              <li class="nav-item active">
-      <a class="nav-link" ><i class="fas fa-dollar-sign"></i> Precios</a>
+                <a class="nav-link" href="EmpleadoABML.aspx"><i class="fas fa-users"></i> Empleados</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="HabitacionABML.aspx"><i class="fas fa-bed"></i> Habitaciones</a>
+            </li>
+                 
+             <li class="nav-item active">
+      <a class="nav-link"><i class="fas fa-dollar-sign"></i> Precios</a>
     </li>
-  </ul>
-</nav>
+            <li class="nav-item active">
+                <a class="nav-link" href="Reporte.aspx"><i class="fas fa-chart-bar"></i> Reportes</a>
+            </li>
+
+        </ul>
+    </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <div class="wrapper">
         <div class="container" style="margin-top: -40px;">
@@ -140,9 +145,10 @@
                          
                     </thead>
                     <tbody>
-                                  <%       if(HabitacionLista !=null)
+                                       <%       if(HabitacionLista !=null)
                         foreach (var item in HabitacionLista)
             { %>
+                   
                         <tr>
                        
                              <th><% = item.Tipo.Nombre%></th>

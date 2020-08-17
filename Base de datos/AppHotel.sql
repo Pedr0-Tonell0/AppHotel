@@ -59,4 +59,3 @@ insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (4,'Suite',6000
 insert into Usuario (Usuario,Contraseña,Dni,Estado) values ('40391972.bulldog',40391972,40391972,0)
 insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40391972,1,1)
 
-

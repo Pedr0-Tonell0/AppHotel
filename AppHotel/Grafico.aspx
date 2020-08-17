@@ -4,12 +4,23 @@
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
-    <asp:Chart runat="server" ID="Graficos">
+    <asp:Chart runat="server" ID="Graficos" Palette="Chocolate" DataSourceID="SqlDataSource1" BackColor="DarkOrange" BorderlineColor="DimGray" OnLoad="Graficos_Load">
         <Series>
-            <asp:Series Name="Series"></asp:Series>
+            <asp:Series Name="Series" ChartType="Pie" ChartArea="ChartArea1" XValueMember="nombre" YValueMembers="CantidadDeReservas" YValuesPerPoint="2"></asp:Series>
         </Series>
         <ChartAreas>
             <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
         </ChartAreas>
+        <Titles>
+            <asp:Title Font="Microsoft Sans Serif, 9.75pt, style=Bold" Name="Title1" Text="Cantidad de reservas por tipo de habitación">
+            </asp:Title>
+        </Titles>
     </asp:Chart>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppHotelConnectionString %>" SelectCommand="select t.nombre,(select count (h1.tipo) from Habitacion as h1 
+inner join TipoHabitacion
+as t1 on t1.Id=h1.Tipo
+inner join Alquiler as a
+on a.NumeroHabitacion=h1.Numero
+where a.Estado=0 and t1.Id=t.Id) as CantidadDeReservas
+from TipoHabitacion as t "></asp:SqlDataSource>
     </asp:Content>

@@ -88,6 +88,7 @@
     <Content Include="HabitacionAlquilada.aspx" />
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="HabitacionTipoPrecio.aspx" />
+    <Content Include="HabitacionTipoPrecio2.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HabitacionABML.aspx" />
     <Content Include="js\demo.js" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="HabitacionTipoPrecio.aspx.designer.cs">
       <DependentUpon>HabitacionTipoPrecio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HabitacionTipoPrecio2.aspx.cs">
+      <DependentUpon>HabitacionTipoPrecio2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HabitacionTipoPrecio2.aspx.designer.cs">
+      <DependentUpon>HabitacionTipoPrecio2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
