@@ -160,9 +160,24 @@
             <div>
                 <asp:Button Text="Agregar" Style="margin-top: 20px; background-color: black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnAgregar" runat="server" OnClick="BtnAgregar_Click"  />
                                
-
-                </div>
+                               </div>
                <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
+              <asp:Chart runat="server" ID="Graficos" Palette="None" DataSourceID="SqlDataSource1" BackColor="Red" BorderlineColor="DimGray" CssClass="center" style="margin-left:750px; margin-top:-250px;">
+        <Series>
+            <asp:Series Name="Series" ChartType="Pie" ChartArea="ChartArea1" XValueMember="nombre" YValueMembers="cantidad" YValuesPerPoint="2"></asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+        </ChartAreas>
+        <Titles>
+            <asp:Title Font="Microsoft Sans Serif, 9.75pt, style=Bold" Name="Title1" Text="Cantidad de habitaciones por tipo">
+            </asp:Title>
+        </Titles>
+    </asp:Chart>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppHotelConnectionString %>" SelectCommand="select count (h.Numero) as cantidad, t.nombre from TipoHabitacion as t inner join habitacion as h on h.Tipo=t.Id group by t.nombre"></asp:SqlDataSource>
+
+
+          
         </div>
 
 

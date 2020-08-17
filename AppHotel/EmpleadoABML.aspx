@@ -115,7 +115,7 @@
     </style>
 
    <br />
-         <div class="container">
+         <div class="container" style="margin-right:190px;">
                <div class="form-row">
             <div class="form-group col-md-4">
                 <h4 style="margin-top:-10px;">Ingresá los datos del empleado</h4>
@@ -158,6 +158,37 @@
                         <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
 
         </div>
+                   <asp:Chart runat="server" ID="Graficos" Palette="None" DataSourceID="SqlDataSource1" BackColor="Blue" BorderlineColor="DimGray" CssClass="center" style="margin-left:1000px; margin-top:-450px;" >
+        <Series>
+            <asp:Series Name="Series" ChartType="StackedBar" ChartArea="ChartArea1" XValueMember="Empleados" YValueMembers="Empleados" YValuesPerPoint="2"></asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+        </ChartAreas>
+        <Titles>
+            <asp:Title Font="Microsoft Sans Serif, 9.75pt, style=Bold" Name="Title1" Text="Empleados">
+            </asp:Title>
+        </Titles>
+    </asp:Chart>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AppHotelConnectionString %>" SelectCommand="select count(em.Estado) as Empleados from empleado as em
+where em.Estado=1 and em.rol=2 "></asp:SqlDataSource>
+
+   <asp:Chart runat="server" ID="Chart1" Palette="None" DataSourceID="SqlDataSource2" BackColor="Blue" BorderlineColor="DimGray" CssClass="center" style="margin-left:650px; margin-top:-490px;" >
+        <Series>
+            <asp:Series Name="Series" ChartType="Bar" ChartArea="ChartArea1" XValueMember="Desempleados" YValueMembers="Desempleados" YValuesPerPoint="2"></asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+        </ChartAreas>
+        <Titles>
+            <asp:Title Font="Microsoft Sans Serif, 9.75pt, style=Bold" Name="Title1" Text="Desempleados">
+            </asp:Title>
+        </Titles>
+    </asp:Chart>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AppHotelConnectionString %>" SelectCommand="
+select count(em.Estado) as Desempleados from empleado as em
+where em.Estado=0 and em.rol=2 "></asp:SqlDataSource>
+          
             </div>
     
  </section>
