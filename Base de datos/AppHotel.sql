@@ -60,4 +60,3 @@ insert into Usuario (Usuario,Contraseña,Dni,Estado) values ('40391972.bulldog',4
 insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40391972,1,1)
 
 
-

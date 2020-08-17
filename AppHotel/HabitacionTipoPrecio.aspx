@@ -111,6 +111,17 @@
 <div class="description">
                         <label style="font-size: 22px;">Tipos de habitaciones</label>
                     </div>
+      <center> 
+          <asp:Chart runat="server" ID="Graficos">
+        <Series>
+            <asp:Series Name="Series"></asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+        </ChartAreas>
+    </asp:Chart>
+             </center>  
+
             <div class="fresh-table full-color-red" style="width: 100%;">
                 <div class="toolbar">
                     <button id="alertBtn" class="btn btn-default">Refrescar</button>

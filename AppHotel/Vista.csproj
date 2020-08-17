@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -83,6 +84,7 @@
     <Content Include="EmpleadoEliminar.aspx" />
     <Content Include="Entregar.aspx" />
     <Content Include="GerenteCambiarPass.aspx" />
+    <Content Include="Grafico.aspx" />
     <Content Include="HabitacionAlquilada.aspx" />
     <Content Include="HabitacionDisponible.aspx" />
     <Content Include="HabitacionTipoPrecio.aspx" />
@@ -175,6 +177,13 @@
     </Compile>
     <Compile Include="GerenteCambiarPass.aspx.designer.cs">
       <DependentUpon>GerenteCambiarPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grafico.aspx.cs">
+      <DependentUpon>Grafico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grafico.aspx.designer.cs">
+      <DependentUpon>Grafico.aspx</DependentUpon>
     </Compile>
     <Compile Include="HabitacionAlquilada.aspx.cs">
       <DependentUpon>HabitacionAlquilada.aspx</DependentUpon>

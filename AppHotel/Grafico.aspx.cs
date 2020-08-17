@@ -9,16 +9,13 @@ using Negocio;
 
 namespace AppHotel
 {
-    public partial class HabitacionTipoPrecio : System.Web.UI.Page
+    public partial class Grafico : System.Web.UI.Page
     {
-        public List<Habitacion> HabitacionLista;
         string[] Nombres = new string[4];
         Decimal[] Cantidad = new Decimal[4];
         protected void Page_Load(object sender, EventArgs e)
         {
-            HabitacionNegocio HabitacionNegocio = new HabitacionNegocio();
-            HabitacionLista = HabitacionNegocio.ListarTipoHabitacionPrecio();
-            ObtenerDatos();
+           
         }
 
         public void ObtenerDatos()
