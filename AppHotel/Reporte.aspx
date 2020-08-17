@@ -123,16 +123,17 @@
                                 <ul class="nav nav-stacked">
                                     <li><strong style="margin-left: 80px; color: white;">Fecha Desde</strong></li>
                                     <li>
-                                        <input type="date" style="margin-left: 80px;" class="form-control"
-                                            name="dateFrom" min="1990-01-01" max="3000-01-01" /></li>
+                                        <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaInicio"  min="1990-01-01" max="3000-01-01" ></asp:TextBox>
+                                     </li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
                                 <ul class="nav nav-stacked">
                                     <li><strong style="margin-left: 80px; color: white;">Fecha hasta</strong></li>
                                     <li>
-                                        <input type="date" style="margin-left: 80px;" class="form-control"
-                                            name="dateTo" min="1990-01-01" max="3000-01-01" /></li>
+ <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaFin"  min="1990-01-01" max="2030-01-01" ></asp:TextBox>
+
+                   
                                 </ul>
                             </div>
 
@@ -141,10 +142,8 @@
                                     <li>&nbsp;</li>
                                     <li>
                                         <br />
-
-                                        <button name="btnBuscar" style="margin-left: 130px; background-color: white;" type="submit"
-                                            class="btn btn-dark">
-                                            Buscar</button>
+<asp:Button runat="server" Id="btnBuscar" style="margin-left: 130px; background-color: white;" class="btn btn-dark" Text="Buscar" OnClick="btnBuscar_Click" />
+                                    
                                     </li>
                                 </ul>
                             </div>
@@ -159,25 +158,19 @@
                         </div>
                         <table id="fresh-table" class="table">
                             <thead>
-                                <th data-field="Materia" data-sortable="true">MATERIA</th>
-                                <th data-field="Apellido" data-sortable="true">Profesor</th>
-                                <th data-field="Cuatrimestre" data-sortable="true">Cuatrimestre</th>
-                                <th data-field="Anio" data-sortable="true">Anio</th>
-                                <th data-field="Alumnos" data-sortable="true">Cantidad alumnos</th>
-                                <th data-field="Aprobacion" data-sortable="true">%
-										Aprobacion</th>
-                                <th data-field="Desaprobados" data-sortable="true">%
-										Desaprobados</th>
-                                <th data-field="actions"></th>
+                                <th data-field="Materia" data-sortable="true">Nombre</th>
+                                <th data-field="Apellido" data-sortable="true">Cantidad</th>
+                               
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Prueba</th>
-                                    <th>Pedro</th>
-
-                                </tr>
-                                <th>Prueba</th>
-                                <th>Juan</th>
+                                  <%       if(Lista !=null)
+                        foreach (var item in Lista)
+            { %>
+                        <tr>
+                            <th><% = item.Nombre%></th>
+                             <th><% = item.Disponibles%></th>
+                        </tr>
+                          <% } %>
                             </tbody>
                         </table>
                     </div>

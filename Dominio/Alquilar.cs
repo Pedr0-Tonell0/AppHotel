@@ -22,6 +22,7 @@ namespace Dominio
         public string Observaciones { get; set; }
         public bool Estado { get; set; }
         public Decimal Precio { get; set; }
-     
+
+
     }
 }
