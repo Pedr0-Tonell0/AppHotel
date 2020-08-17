@@ -78,17 +78,21 @@ namespace AppHotel
                         lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
-                    Estado = ClienteNegocio.AgregarCliente(Cliente);
-                    if (Estado == true)
-                    {
-                        lblMensaje.Text = "Cliente agregado correctamente";
-                        txtDNI.Text = "";
-                        txtNombre.Text = "";
-                        txtEmail.Text = "";
-                    }
                     else
                     {
-                        lblMensaje.Text = "Error el cliente no fue agregado correctamente";
+                        Estado = ClienteNegocio.AgregarCliente(Cliente);
+                        if (Estado == true)
+                        {
+                            lblMensaje.Text = "Cliente agregado correctamente";
+                            txtDNI.Text = "";
+                            txtNombre.Text = "";
+                            txtEmail.Text = "";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error el cliente no fue agregado correctamente";
+                        }
+
                     }
 
                 }
@@ -102,17 +106,21 @@ namespace AppHotel
                         lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
-                    Estado = ClienteNegocio.ModificarCliente(Cliente);
-                    if (Estado == true)
-                    {
-                        lblMensaje.Text = "Cliente modificado correctamente";
-                        txtDNI.Text = "";
-                        txtNombre.Text = "";
-                        txtEmail.Text = "";
-                    }
                     else
                     {
-                        lblMensaje.Text = "Error el cliente no fue modificado correctamente";
+                        Estado = ClienteNegocio.ModificarCliente(Cliente);
+                        if (Estado == true)
+                        {
+                            lblMensaje.Text = "Cliente modificado correctamente";
+                            txtDNI.Text = "";
+                            txtNombre.Text = "";
+                            txtEmail.Text = "";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error el cliente no fue modificado correctamente";
+
+                        }
 
                     }
 

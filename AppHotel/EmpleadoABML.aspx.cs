@@ -79,20 +79,23 @@ namespace AppHotel
                         lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
-                    Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
-                    if (Estado == true)
-                    {
-                        EmpleadoNegocio.GenerarUsuario(Empleado);
-                        lblMensaje.Text = "Empleado agregado correctamente";
-                        txtDNI.Text = "";
-                        txtNombre.Text = "";
-                        txtEmail.Text = "";
-                    }
                     else
                     {
-                        lblMensaje.Text = "Error el empleado no fue agregado correctamente";
+                        Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
+                        if (Estado == true)
+                        {
+                            EmpleadoNegocio.GenerarUsuario(Empleado);
+                            lblMensaje.Text = "Empleado agregado correctamente";
+                            txtDNI.Text = "";
+                            txtNombre.Text = "";
+                            txtEmail.Text = "";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error el empleado no fue agregado correctamente";
+                        }
                     }
-                   
+                                      
                 }
                 else if (Empleado != null)
                 {

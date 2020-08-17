@@ -123,7 +123,7 @@
                                 <ul class="nav nav-stacked">
                                     <li><strong style="margin-left: 80px; color: white;">Fecha Desde</strong></li>
                                     <li>
-                                        <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaInicio"  min="1990-01-01" max="3000-01-01" ></asp:TextBox>
+                                        <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaInicio"  min="1990-01-01" max="3000-01-01"  required="true"></asp:TextBox>
                                      </li>
                                 </ul>
                             </div>
@@ -131,7 +131,7 @@
                                 <ul class="nav nav-stacked">
                                     <li><strong style="margin-left: 80px; color: white;">Fecha hasta</strong></li>
                                     <li>
- <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaFin"  min="1990-01-01" max="2030-01-01" ></asp:TextBox>
+ <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaFin"  min="1990-01-01" max="2030-01-01"  required="true"></asp:TextBox>
 
                    
                                 </ul>
@@ -143,11 +143,17 @@
                                     <li>
                                         <br />
 <asp:Button runat="server" Id="btnBuscar" style="margin-left: 130px; background-color: white;" class="btn btn-dark" Text="Buscar" OnClick="btnBuscar_Click" />
-                                    
+                                                
+
                                     </li>
+                                    
                                 </ul>
+                                <br />
+                                                                                       <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:red; margin-left:-480px;"></asp:Label> 
+
                             </div>
                         </div>
+
                         <br />
 
                     </div>

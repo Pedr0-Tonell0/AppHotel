@@ -131,9 +131,9 @@ namespace AppHotel
             catch (Exception)
             {
 
-                throw;
+                lblMensaje.Text = "Hay campos vacios.";
             }
-    
-                }
+
+        }
         }
     }
