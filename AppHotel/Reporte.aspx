@@ -144,7 +144,7 @@ from TipoHabitacion as t "></asp:SqlDataSource></center>
                         <div class="row">
                             <div class="col-md-3">
                                 <ul class="nav nav-stacked">
-                                    <li><strong style="margin-left: 80px; color: white;">Fecha Desde</strong></li>
+                                    <li><strong style="margin-left: 80px; color: white;">Fecha de ingreso</strong></li>
                                     <li>
                                         <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaInicio"  min="1990-01-01" max="3000-01-01"  required="true"></asp:TextBox>
                                      </li>
@@ -152,7 +152,7 @@ from TipoHabitacion as t "></asp:SqlDataSource></center>
                             </div>
                             <div class="col-md-3">
                                 <ul class="nav nav-stacked">
-                                    <li><strong style="margin-left: 80px; color: white;">Fecha hasta</strong></li>
+                                    <li><strong style="margin-left: 80px; color: white;">Fecha de egreso</strong></li>
                                     <li>
  <asp:TextBox runat="server" type="date"  style="margin-left: 80px;" class="form-control" ID="txtFechaFin"  min="1990-01-01" max="2030-01-01"  required="true"></asp:TextBox>
 

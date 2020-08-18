@@ -64,6 +64,37 @@ namespace Negocio
             return null;
         }
 
+        public bool BuscarClienteAlquilerActivo(Cliente Cliente)
+        {
+            Alquilar Alquiler;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearQuery("SELECT a.Id,a.FechaIngreso,a.DniCliente from alquiler as a where a.Estado=1 and a.DniCliente = " + Cliente.Dni);
+                datos.ejecutarLector();
+
+                if (datos.lector.Read())
+                {
+                    Alquiler = new Alquilar();
+                    Alquiler.Id = datos.lector.GetInt32(0);
+                    Alquiler.FechaIngreso = datos.lector.GetDateTime(1);
+                    Alquiler.Cliente = new Cliente();
+                    Alquiler.Cliente.Dni = datos.lector.GetInt32(2);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return false;
+        }
+
+
         public bool EntregarHabitacion(Alquilar Alquilar, int DNI)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -194,7 +225,7 @@ namespace Negocio
                     Aux = new TipoHabitacion();
 
                     Aux.Disponibles = datos.lector.GetInt32(0);
-                   Aux.Nombre = datos.lector.GetString(1);
+                    Aux.Nombre = datos.lector.GetString(1);
                     Lista.Add(Aux);
                 }
                 return Lista;

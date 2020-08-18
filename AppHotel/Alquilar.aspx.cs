@@ -69,38 +69,47 @@ namespace AppHotel
                 HabitacionNegocio HabitacionNegocio = new HabitacionNegocio();
                 Cliente = null;
                 Cliente = ClienteNegocio.BuscarCliente(Convert.ToInt32(txtDNI.Text));
-                if (Cliente != null)
+                if(AlquilerNegocio.BuscarClienteAlquilerActivo(Cliente) == true)
                 {
-                    Cliente.Dni = Convert.ToInt32(txtDNI.Text);
-                    DateTime FechaIngreso = System.DateTime.Now;
-                    int NumeroHabitacion = Convert.ToInt32(Request.QueryString["Habitacion"]);
-                    Empleado = (Empleado)Session["EmpleadoLogueado"];
-                    Estado1 = AlquilerNegocio.Alquilar(NumeroHabitacion, Cliente.Dni, Empleado.Dni, FechaIngreso);
-                    Estado2 = HabitacionNegocio.CambiarEstadoHabitacion(NumeroHabitacion);
-                    if (Estado1 == true && Estado2 == true)
-                    {
-                        lblMensaje.Text = "Habitacion alquilada correctamente.";
-                        txtDNI.Text = "";
-                        txtNombre.Text = "";
-                        txtEmail.Text = "";
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "Error la habitacion no fue alquilada correctamente.";
-
-                    }
+                    lblMensaje.Text = "Error el cliente ya tiene un alquiler a su nombre en este momento.";
 
                 }
                 else
                 {
-                    lblMensaje.Text = "Error el cliente no se encuentra registrado.";
+                    if (Cliente != null)
+                    {
+                        Cliente.Dni = Convert.ToInt32(txtDNI.Text);
+                        DateTime FechaIngreso = System.DateTime.Now;
+                        int NumeroHabitacion = Convert.ToInt32(Request.QueryString["Habitacion"]);
+                        Empleado = (Empleado)Session["EmpleadoLogueado"];
+                        Estado1 = AlquilerNegocio.Alquilar(NumeroHabitacion, Cliente.Dni, Empleado.Dni, FechaIngreso);
+                        Estado2 = HabitacionNegocio.CambiarEstadoHabitacion(NumeroHabitacion);
+                        if (Estado1 == true && Estado2 == true)
+                        {
+                            lblMensaje.Text = "Habitacion alquilada correctamente.";
+                            txtDNI.Text = "";
+                            txtNombre.Text = "";
+                            txtEmail.Text = "";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error la habitacion no fue alquilada correctamente.";
 
+                        }
+
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Error el cliente no se encuentra registrado.";
+
+                    }
                 }
+               
             }
             catch (Exception)
             {
 
-                lblMensaje.Text = "Error el cliente no se encuentra registrado.";
+                lblMensaje.Text = "Ha ocurrido un error.";
             }
         }
     }
