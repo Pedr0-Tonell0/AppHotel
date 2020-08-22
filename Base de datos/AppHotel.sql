@@ -66,8 +66,3 @@ insert into Habitacion(Numero,Piso,Estado,Tipo) values (3,3,1,3)
 insert into Habitacion(Numero,Piso,Estado,Tipo) values (4,2,1,4)
 insert into Cliente (Nombre,Email,Dni,Estado) values ('Juan Tonello','juan@gmail.com',40391962,1)
 
-
-
-select * from Habitacion
-
-

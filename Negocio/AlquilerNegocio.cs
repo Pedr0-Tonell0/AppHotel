@@ -208,7 +208,81 @@ namespace Negocio
 
         }
 
-        public List<TipoHabitacion> Reporte(Alquilar Alquilar )
+        public List<Alquilar> ListarAlquilerUsuario(int DNI)
+        {
+            List<Alquilar> Lista = new List<Alquilar>();
+            Alquilar Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("select Precio,FechaIngreso,FechaEgreso,DniCliente,NumeroHabitacion from alquiler where alquiler.DniEmpleadoAlquila=@DNI and alquiler.estado = 0");
+                datos.agregarParametro("@DNI", DNI);
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Alquilar();
+                    Aux.Precio = datos.lector.GetDecimal(0);
+                    Aux.FechaIngreso = datos.lector.GetDateTime(1);
+                    Aux.FechaEgreso = datos.lector.GetDateTime(2);
+                    Aux.Cliente = new Cliente();
+                    Aux.Cliente.Dni = datos.lector.GetInt32(3);
+                    Aux.Habitacion = new Habitacion();
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(4);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
+
+        public List<Alquilar> ListarEntregaUsuario(int DNI)
+        {
+            List<Alquilar> Lista = new List<Alquilar>();
+            Alquilar Aux;
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearQuery("select Precio,FechaIngreso,FechaEgreso,DniCliente,NumeroHabitacion from alquiler where alquiler.DniEmpleadoEntrega=@DNI");
+                datos.agregarParametro("@DNI", DNI);
+                datos.ejecutarLector();
+                while (datos.lector.Read())
+                {
+                    Aux = new Alquilar();
+                    Aux.Precio = datos.lector.GetDecimal(0);
+                    Aux.FechaIngreso = datos.lector.GetDateTime(1);
+                    Aux.FechaEgreso = datos.lector.GetDateTime(2);
+                    Aux.Cliente = new Cliente();
+                    Aux.Cliente.Dni = datos.lector.GetInt32(3);
+                    Aux.Habitacion = new Habitacion();
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(4);
+                    Lista.Add(Aux);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
+
+        }
+
+        public List<TipoHabitacion> Reporte(Alquilar Alquilar)
         {
             List<TipoHabitacion> Lista = new List<TipoHabitacion>();
             TipoHabitacion Aux;

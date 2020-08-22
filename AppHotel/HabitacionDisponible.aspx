@@ -104,6 +104,9 @@
              <li class="nav-item active">
       <a class="nav-link" href="HabitacionTipoPrecio.aspx"><i class="fas fa-dollar-sign"></i> Precios</a>
     </li>
+               <li class="nav-item active">
+      <a class="nav-link" href="EmpleadoListaHome.aspx"><i class="fas fa-suitcase-rolling"></i> Reporte</a>
+    </li>
   </ul>
 </nav>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">

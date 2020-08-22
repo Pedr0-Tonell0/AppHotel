@@ -72,6 +72,7 @@
     <Content Include="AlquilerLista.aspx" />
     <Content Include="AlquilerListaFinalizado.aspx" />
     <Content Include="AlquilerListaHome.aspx" />
+    <Content Include="AlquilerUsuario.aspx" />
     <Content Include="ClienteABML.aspx" />
     <Content Include="ClienteEliminar.aspx" />
     <Content Include="css\demo.css" />
@@ -82,7 +83,9 @@
     <Content Include="EmpleadoABML.aspx" />
     <Content Include="EmpleadoCambiarPass.aspx" />
     <Content Include="EmpleadoEliminar.aspx" />
+    <Content Include="EmpleadoListaHome.aspx" />
     <Content Include="Entregar.aspx" />
+    <Content Include="EntregaUsuario.aspx" />
     <Content Include="GerenteCambiarPass.aspx" />
     <Content Include="Grafico.aspx" />
     <Content Include="HabitacionAlquilada.aspx" />
@@ -130,6 +133,13 @@
     <Compile Include="AlquilerListaHome.aspx.designer.cs">
       <DependentUpon>AlquilerListaHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlquilerUsuario.aspx.cs">
+      <DependentUpon>AlquilerUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlquilerUsuario.aspx.designer.cs">
+      <DependentUpon>AlquilerUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClienteABML.aspx.cs">
       <DependentUpon>ClienteABML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,12 +175,26 @@
     <Compile Include="EmpleadoEliminar.aspx.designer.cs">
       <DependentUpon>EmpleadoEliminar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadoListaHome.aspx.cs">
+      <DependentUpon>EmpleadoListaHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadoListaHome.aspx.designer.cs">
+      <DependentUpon>EmpleadoListaHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entregar.aspx.cs">
       <DependentUpon>Entregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Entregar.aspx.designer.cs">
       <DependentUpon>Entregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaUsuario.aspx.cs">
+      <DependentUpon>EntregaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntregaUsuario.aspx.designer.cs">
+      <DependentUpon>EntregaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GerenteCambiarPass.aspx.cs">
       <DependentUpon>GerenteCambiarPass.aspx</DependentUpon>
