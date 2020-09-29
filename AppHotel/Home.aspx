@@ -8,13 +8,18 @@
 </asp:Content>
 
 <asp:Content ID="home" ContentPlaceHolderID="cuerpo" runat="server">
+	<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"></script>
    <nav class="navbar navbar-expand-md fixed-top top-nav">
 	<div class="container">
 		  <a class="navbar-brand" href="#"><strong>The Bulldog</strong></a>
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+		      </li>
+				      <li class="nav-item">
+		        <a class="nav-link" href="#Nosotros">Nosotros</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#Servicios">Servicios</a>
@@ -94,9 +99,41 @@
 		</div>
 	</div>
 </section>
+	        <label style="color: white;">.</label>
+    <section class="about-sec parallax-section" id="Nosotros">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2><strong>Nosotros</strong></h2>
+                    <h2 class="text-underline-primary" style="margin-right: 90px;"></h2>
+                </div>
+                <div class="col-md-4">
+ 
+		
 
+
+                    <p>El Hotel Bulldog fue fundado hace muchos años, y desde ese instante brindamos a nuestros huéspedes el mejor confort y una atención personalizada para que su estadía sea muy agradable. </p>
+                    <p>Contamos con un espacio diseñado especialmente para que pueda relajarse en armonía con la naturaleza. Ya sea en familia, en pareja o con amigos, nuestra misión es transformar su experiencia en una sucesión de momentos placenteros.</p>
+                </div>
+                <div class="col-md-4">
+                    <p>La diversidad de servicios y la calidad de nuestras instalaciones convierten a nuestro hotel en el lugar ideal para realizar eventos empresariales, congresos, conferencias, bodas y festejos especiales.</p>
+                 <p>Venga a disfrutar del lugar donde la naturaleza y el bienestar se armonizan para que tenga una estadía inolvidable.</p>
+                    <p><a href="#Contacto" class="btn btn-transparent-white btn-capsul">Contactanos</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+	 <section class="info-section" >
+            <div class="container" >
+                <div class="head-box text-center mb-5">
+             <div class="video-responsive">
+				 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nj7eONb0F9M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 <section class="info-section bg-primary py-0" id="Contacto">
-	<div class="container-fluid" style="background-color:darkblue;">
+	<div class="container-fluid">
 		<div class="row"  style="margin-left:470px;">
 			     <div class="col-md-6 p-0 m-0">
 				   <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4">
@@ -110,26 +147,24 @@
 					 </div>
 
 				   <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4">
-                <ul class="pl-5"  style="margin-top:185px;margin-left:-300px">
+                <ul class="pl-5"  style="margin-top:150px;margin-left:-300px">
+		<a href="https://api.whatsapp.com/send?phone=1173685728&text=Bienvenido,%20somos%20Bulldog!!"><img src="https://img.icons8.com/color/60/000000/whatsapp.png"/></a>
+            <a href =https://www.instagram.com/explore/locations/285406947/netherlands/amsterdam-netherlands/the-bulldog-hotel/"> <img src="https://img.icons8.com/fluent/60/000000/instagram-new.png"/></a>	
                           <li style=" width:750px;margin-left:0 auto; ">
+
                     	<i class="fa fa-map-marker box-round-outline" aria-hidden="true"></i>
+
                     	<span class="list-content">
+
                     		<strong>Ubicación</strong>
                     		<br>Estamos ubicados en Oudezijds Voorburgwal 218, 1012 GJ Amsterdam, Países Bajos.
                     	</span>
                     </li>
-                    <li style=" width:750px;margin:0 auto; ">
-                    	<i class="fa fa-phone box-round-outline" aria-hidden="true"></i>
-                    	<span class="list-content">
-                    		<strong>Telefono</strong>
-                    		<br> +54 11 7368-5728
-                    	</span>
-                	</li>
                     <li style=" width:750px;margin:0 auto; " >
                     	<i class="fa fa-envelope box-round-outline" aria-hidden="true"></i>
                     	<span class="list-content">
                     		<strong>Email</strong>
-                    		<br> pedrotonello11@gmail.com
+                    		<br> bulldog@bulldog.com
                     	</span>
                     </li>
 					<br /><br />
@@ -143,7 +178,14 @@
             </div>
 			        </div>
 </section>
-
+	 <section class="info-section" id="Comentarios">
+            <div class="container">
+                <div class="head-box text-center mb-5">
+                    <h2>Dejanos tu comentario</h2>
+                    <div style="margin-top: 30px;" class="fb-comments" data-mobile="true" data-colorscheme="dark" data-href="https://localhost:44392/Home.aspx" data-numposts="5" data-width=""></div>
+                </div>
+            </div>
+        </section>
 <section class="team-section py-5" id="Desarrollador">
 	<div class="container">
 		<div class="head-box text-center mb-5">
