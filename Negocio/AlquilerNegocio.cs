@@ -213,22 +213,22 @@ namespace Negocio
             List<Alquilar> Lista = new List<Alquilar>();
             Alquilar Aux;
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
-                datos.setearQuery("select Precio,FechaIngreso,FechaEgreso,DniCliente,NumeroHabitacion from alquiler where alquiler.DniEmpleadoAlquila=@DNI and alquiler.estado = 0");
+                datos.setearQuery("select FechaIngreso,DniCliente,Cliente.Nombre,NumeroHabitacion,TipoHabitacion.Nombre from alquiler inner join Cliente on cliente.Dni = alquiler.DniCliente inner join Habitacion on habitacion.Numero = alquiler.NumeroHabitacion inner join TipoHabitacion on TipoHabitacion.Id = Habitacion.Tipo where alquiler.DniEmpleadoAlquila = @DNI and alquiler.estado = 1");
                 datos.agregarParametro("@DNI", DNI);
                 datos.ejecutarLector();
                 while (datos.lector.Read())
                 {
                     Aux = new Alquilar();
-                    Aux.Precio = datos.lector.GetDecimal(0);
-                    Aux.FechaIngreso = datos.lector.GetDateTime(1);
-                    Aux.FechaEgreso = datos.lector.GetDateTime(2);
+                    Aux.FechaIngreso = datos.lector.GetDateTime(0);
                     Aux.Cliente = new Cliente();
-                    Aux.Cliente.Dni = datos.lector.GetInt32(3);
+                    Aux.Cliente.Dni = datos.lector.GetInt32(1);
+                    Aux.Cliente.Nombre = datos.lector.GetString(2);
                     Aux.Habitacion = new Habitacion();
-                    Aux.Habitacion.Numero = datos.lector.GetInt32(4);
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(3);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre= datos.lector.GetString(4);
                     Lista.Add(Aux);
                 }
                 return Lista;
@@ -253,7 +253,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("select Precio,FechaIngreso,FechaEgreso,DniCliente,NumeroHabitacion from alquiler where alquiler.DniEmpleadoEntrega=@DNI");
+                datos.setearQuery("select alquiler.Precio,FechaIngreso,FechaEgreso,DniCliente,cliente.Nombre,NumeroHabitacion,TipoHabitacion.Nombre from alquiler inner join Cliente on cliente.Dni = alquiler.DniCliente inner join Habitacion on habitacion.Numero = alquiler.NumeroHabitacion inner join TipoHabitacion on TipoHabitacion.Id = Habitacion.Tipo where alquiler.DniEmpleadoEntrega= @DNI and alquiler.estado = 0");
                 datos.agregarParametro("@DNI", DNI);
                 datos.ejecutarLector();
                 while (datos.lector.Read())
@@ -264,8 +264,11 @@ namespace Negocio
                     Aux.FechaEgreso = datos.lector.GetDateTime(2);
                     Aux.Cliente = new Cliente();
                     Aux.Cliente.Dni = datos.lector.GetInt32(3);
+                    Aux.Cliente.Nombre = datos.lector.GetString(4);
                     Aux.Habitacion = new Habitacion();
-                    Aux.Habitacion.Numero = datos.lector.GetInt32(4);
+                    Aux.Habitacion.Numero = datos.lector.GetInt32(5);
+                    Aux.Tipo = new TipoHabitacion();
+                    Aux.Tipo.Nombre = datos.lector.GetString(6);
                     Lista.Add(Aux);
                 }
                 return Lista;
@@ -289,7 +292,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("select count(t.Id) as cantidad,t.Nombre from Alquiler as a inner join Habitacion as h on h.Numero=a.NumeroHabitacion inner join TipoHabitacion as t on t.Id=h.Tipo where a.Estado=0 and FechaIngreso >= @FechaIngreso and FechaEgreso<=@FechaEgreso group by t.Nombre");
+                datos.setearQuery("select count(t.Id) as cantidad,t.Nombre from Alquiler as a inner join Habitacion as h on h.Numero=a.NumeroHabitacion inner join TipoHabitacion as t on t.Id=h.Tipo where a.Estado=0 and FechaIngreso >= @FechaIngreso and FechaEgreso<=@FechaEgreso or FechaEgreso is null group by t.Nombre");
                 datos.agregarParametro("@FechaEgreso", Alquilar.FechaEgreso);
                 datos.agregarParametro("@FechaIngreso", Alquilar.FechaIngreso);
                 datos.ejecutarLector();

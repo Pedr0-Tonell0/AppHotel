@@ -55,8 +55,8 @@
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-hotel"></i></div>
                         <div class="serv-section-desc">
-                            <h4>Alquileres registrados por mi </h4>
-                            <h5>Va poder ver los alquileres registrados por  mi.</h5>
+                            <h4>Alquileres registrados por usted </h4>
+                            <h5>Va poder ver los alquileres registrados por usted<br />  que siguen activos en este momento.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="AlquilerUsuario.aspx">Ingresar</a>
@@ -66,8 +66,8 @@
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-suitcase-rolling"></i></div>
                         <div class="serv-section-desc">
-                            <h4>Entregas registradas por mi</h4>
-                             <h5>Va poder ver las entregas que fueron realizadas por mi.</h5>
+                            <h4>Entregas registradas por usted</h4>
+                             <h5>Va poder ver las entregas que fueron realizadas por usted<br /> que fueron finalizadas.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>
                         <a class="btn btn-dark" href="EntregaUsuario.aspx">Ingresar</a>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Entregas hechas por mi" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"  CodeBehind="EntregaUsuario.aspx.cs" Inherits="AppHotel.EntregaUsuario" %>
+﻿<%@ Page Title="Entregas hechas por usted" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"  CodeBehind="EntregaUsuario.aspx.cs" Inherits="AppHotel.EntregaUsuario" %>
 <asp:Content ID="header" ContentPlaceHolderID="head" runat="server">
 <html lang="en">
 <head>
@@ -133,15 +133,17 @@
    <div class="row">
 				<div class="col-md-12 col-md-offset-2" style="margin-left: 5%;margin-top:-20px;">
 					<div class="description">
-						<label style="font-size: 22px;margin-left: -5%;">Entregas registradas por mi</label>
+						<label style="font-size: 22px;margin-left: -5%;">Entregas registradas por usted</label>
 					</div>
 
 					<div class="fresh-table full-color-green" style="width: 90%;">
 
 						<table id="fresh-table" class="table">
 							<thead>
-									  <th data-field="nombre" data-sortable="true">Numero de habitacion</th>
+						<th data-field="nombre" data-sortable="true">Numero de habitacion</th>
+                        <th data-field="nombre hab" data-sortable="true">Tipo de habitacion</th>
                         <th data-field="dni" data-sortable="true">DNI del cliente</th>
+                         <th data-field="dniC" data-sortable="true">Nombre del cliente</th>
                         <th data-field="tipo" data-sortable="true">Fecha de ingreso</th>
                         <th data-field="numero" data-sortable="true">Fecha de egreso</th>
                         <th data-field="piso" data-sortable="true">Precio</th>
@@ -154,7 +156,9 @@
                         <tr>
                        
                             <th><% = item.Habitacion.Numero%></th>
+                            <th><% = item.Tipo.Nombre%></th>
                             <th><% = item.Cliente.Dni%></th>
+                             <th><% = item.Cliente.Nombre%></th>
                             <th><% = item.FechaIngreso.ToString("dd/MM/yyyy")%></th>
                             <th><% = item.FechaEgreso.ToString("dd/MM/yyyy")%></th>
                             <th>$  <% = Math.Truncate(item.Precio)%></th>
