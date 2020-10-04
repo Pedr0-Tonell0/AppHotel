@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,6 +17,8 @@ namespace AppHotel
         {
             EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
             ListaEmpleado = EmpleadoNegocio.ListarEmpleado();
+            Image1.Visible = false;
+
 
         }
 
@@ -39,9 +42,11 @@ namespace AppHotel
             {
                 if (Empleado != null)
                 {
+                    Image1.Visible = true;
                     txtDNI.Text = Empleado.Dni.ToString();
                     txtNombre.Text = Empleado.Nombre;
                     txtEmail.Text = Empleado.Email;
+                    Image1.ImageUrl = Empleado.Foto;
                 }
                 else if (Empleado == null)
                 {
@@ -63,7 +68,8 @@ namespace AppHotel
         {
             try
             {
-                bool Estado; 
+                bool Estado;
+                string Extension;
                 EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
                 Empleado Empleado = new Empleado();
                 Empleado = null;
@@ -74,13 +80,36 @@ namespace AppHotel
                     Empleado.Dni = Convert.ToInt32(txtDNI.Text);
                     Empleado.Nombre = txtNombre.Text;
                     Empleado.Email = txtEmail.Text;
+                    if (Foto.HasFile)
+                    {
+                       Extension = Path.GetExtension(Foto.FileName).ToLower();
+                        if (Extension == ".jpg" || Extension == ".gif" || Extension == ".jpeg")
+                        {
+                            Foto.SaveAs(Server.MapPath("~/Fotos/" + Foto.FileName));
+                            Empleado.Foto = "~/Fotos/" + Foto.FileName;
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "El formato de la imagen es incorrecto";
+
+                        }
+
+                    }  
+                    else
+                    {
+                        Empleado.Foto = "";
+                    }
+                    
                     if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
+
                     {
                         lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
+
                     else
                     {
+
                         Estado = EmpleadoNegocio.AgregarEmpleado(Empleado);
                         if (Estado == true)
                         {
@@ -94,30 +123,38 @@ namespace AppHotel
                         {
                             lblMensaje.Text = "Error el empleado no fue agregado correctamente";
                         }
+
                     }
-                                      
+
                 }
                 else if (Empleado != null)
                 {
                     Empleado.Dni = Convert.ToInt32(txtDNI.Text);
                     Empleado.Nombre = txtNombre.Text;
                     Empleado.Email = txtEmail.Text;
+
                     if (txtDNI.Text == "" || txtNombre.Text == "" || txtEmail.Text == "")
+
                     {
                         lblMensaje.Text = "Hay campos que se encuentran vacios";
 
                     }
-                    Estado = EmpleadoNegocio.ModificarEmpleado(Empleado);
-                    if (Estado == true)
-                    {
-                        lblMensaje.Text = "Empleado modificado correctamente";
-                        txtDNI.Text = "";
-                        txtNombre.Text = "";
-                        txtEmail.Text = "";
-                    }
+
                     else
                     {
-                        lblMensaje.Text = "Error el empleado no fue modificado correctamente";
+                        Estado = EmpleadoNegocio.ModificarEmpleado(Empleado);
+                        if (Estado == true)
+                        {
+                            lblMensaje.Text = "Empleado modificado correctamente";
+                            txtDNI.Text = "";
+                            txtNombre.Text = "";
+                            txtEmail.Text = "";
+                        }
+                        else
+                        {
+                            lblMensaje.Text = "Error el empleado no fue modificado correctamente";
+
+                        }
 
                     }
 
@@ -125,7 +162,7 @@ namespace AppHotel
             }
             catch (Exception)
             {
-                lblMensaje.Text = "Hay campos que se encuentran vacios";
+                lblMensaje.Text = "Hay campos que se encuentran vacios o verificar el formato de la imagen";
 
             }
         }

@@ -17,7 +17,9 @@ namespace Dominio
 
         public string Email { get; set; }
 
-        
+        public string Foto { get; set; }
+
+
 
 
     }

@@ -6,7 +6,8 @@ Dni int primary key,
 Nombre varchar (100) null,
 Email varchar (50) null,
 Rol int null,
-Estado bit null
+Estado bit null,
+Foto varchar(200) null
 )
 
 create table Cliente(
@@ -57,12 +58,11 @@ insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (2,'Familiar',3
 insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (3,'Compartida',800,'Alojamiento confortable con baño compartido.');
 insert into TipoHabitacion (Id,Nombre,Precio,Descripcion) VALUES (4,'Suite',6000,'Ambiente inolvidable y romántica, decorado con estilo y gusto, baño con ducha de cromoterapia, y jacuzzi.');
 insert into Usuario (Usuario,Contraseña,Dni,Estado) values ('40391972.bulldog',40391972,40391972,0)
-insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Admin','admin@bulldog.com',40391972,1,1)
-insert into Usuario (Usuario,Contraseña,Dni,Estado) values ('40391970.bulldog',40391970,40391970,0)
-insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Pedro','pedro@bulldog.com',40391970,2,1)
+insert into Empleado (Nombre,Email,Dni,Rol,Estado) values ('Gerente','gerente@bulldog.com',40391972,1,1)
 insert into Habitacion(Numero,Piso,Estado,Tipo) values (1,1,1,1)
 insert into Habitacion(Numero,Piso,Estado,Tipo) values (2,2,1,2)
 insert into Habitacion(Numero,Piso,Estado,Tipo) values (3,3,1,3)
 insert into Habitacion(Numero,Piso,Estado,Tipo) values (4,2,1,4)
 insert into Cliente (Nombre,Email,Dni,Estado) values ('Juan Tonello','juan@gmail.com',40391962,1)
+
 

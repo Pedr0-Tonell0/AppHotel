@@ -15,7 +15,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearQuery("Select e.Dni, e.Nombre, e.Email from Empleado as e where e.Dni = " + Dni);
+                datos.setearQuery("Select e.Dni, e.Nombre, e.Email, e.Foto from Empleado as e where e.Dni = " + Dni);
                 datos.ejecutarLector();
 
                 if (datos.lector.Read())
@@ -24,6 +24,8 @@ namespace Negocio
                     Empleado.Dni = datos.lector.GetInt32(0);
                     Empleado.Nombre = datos.lector.GetString(1);
                     Empleado.Email = datos.lector.GetString(2);
+                    Empleado.Foto = datos.lector.GetString(3);
+
                     return Empleado;
                 }
             }
@@ -75,11 +77,12 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("insert into Empleado (Dni,Nombre,Email,Estado,Rol)values(@DNI,@Nombre,@Email,@Estado,@Rol)");
+                datos.setearQuery("insert into Empleado (Dni,Nombre,Email,Estado,Rol,Foto)values(@DNI,@Nombre,@Email,@Estado,@Rol,@Foto)");
                 datos.agregarParametro("@DNI", Empleado.Dni);
                 datos.agregarParametro("@Nombre", Empleado.Nombre);
                 datos.agregarParametro("@Email", Empleado.Email);
                 datos.agregarParametro("@Estado", true);
+                datos.agregarParametro("@Foto", Empleado.Foto);
                 datos.agregarParametro("@Rol", 2);
 
                 datos.ejecutarAccion();
@@ -94,6 +97,7 @@ namespace Negocio
             return Estado;
 
         }
+
 
         public bool GenerarUsuario(Empleado Empleado)
         {

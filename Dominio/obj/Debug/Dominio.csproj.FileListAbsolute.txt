@@ -8,3 +8,8 @@ C:\Users\pedri_000\Desktop\clon\AppHotel\Dominio\bin\Debug\Dominio.pdb
 C:\Users\pedri_000\Desktop\clon\AppHotel\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\pedri_000\Desktop\clon\AppHotel\Dominio\obj\Debug\Dominio.dll
 C:\Users\pedri_000\Desktop\clon\AppHotel\Dominio\obj\Debug\Dominio.pdb
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\Dominio\bin\Debug\Dominio.dll
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\Dominio\bin\Debug\Dominio.pdb
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\Dominio\obj\Debug\Dominio.dll
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\Dominio\obj\Debug\Dominio.pdb

@@ -149,7 +149,10 @@
                 <div class="form-row" style="margin-top: 10px;">
             <div class="form-group col-md-5">
                 <asp:Label Text="Foto" ID="LblDireccion" ClientIDMode="Static" runat="server" CssClass="control-label " />
-                <asp:TextBox runat="server" onkeyup="validarVacio(this.id)" onfocus="Seleccionar(this.id)" MaxLength="40" Style="margin-top: 10px;" ID="txtFoto" ClientIDMode="Static"  CssClass="form-control " />
+                    <asp:FileUpload ID="Foto" runat="server" />
+
+                <br />
+                <asp:Image ID="Image1" runat="server" Height="200" Width="200" />
             </div>
              </div>
         <div>
@@ -214,6 +217,7 @@ where em.Estado=0 and em.rol=2 "></asp:SqlDataSource>
                             <th><% = item.Nombre%></th>
                              <th><% = item.Email%></th>
                             <th><a  href="EmpleadoEliminar.aspx?Dni=<% = item.Dni%>"  class="btn btn-dark">Eliminar</a></th>
+
                         </tr>
                           <% } %>
                     </tbody>
