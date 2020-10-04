@@ -90,6 +90,7 @@ namespace AppHotel
                             txtDNI.Text = "";
                             txtNombre.Text = "";
                             txtEmail.Text = "";
+                            BtnAlquilar.Visible = false;
                         }
                         else
                         {

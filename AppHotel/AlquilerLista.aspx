@@ -131,7 +131,7 @@
    <div class="row">
 				<div class="col-md-12 col-md-offset-2" style="margin-left: 5%;margin-top:-20px;">
 					<div class="description">
-						<label style="font-size: 22px;margin-left: -5%;">Alquileres en ejecución</label>
+						<label style="font-size: 22px;margin-left: -5%;">Alquileres activos</label>
 					</div>
 
 					<div class="fresh-table full-color-green" style="width: 90%;">

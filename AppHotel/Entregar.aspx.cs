@@ -78,6 +78,7 @@ namespace AppHotel
                     txtFechaEgreso.Text = "";
                     txtDNI.Text = "";
                     txtFechaIngreso.Text = "";
+                    BtnEntregar.Visible = false;
                 }
                 else
                 {

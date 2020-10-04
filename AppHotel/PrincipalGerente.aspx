@@ -103,7 +103,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-dollar-sign"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Precios</h4>
-                        <h5>Usted va poder ver los precios  y cantidad de habitaciones disponibles</h5> </div>
+                        <h5>Va poder ver los precios  y cantidad de habitaciones disponibles</h5> </div>
                     <div class="section-heading-line-left"></div>
                              <a class="btn btn-dark" href="HabitacionTipoPrecio2.aspx">Ingresar</a>
                                     </div>

@@ -53,7 +53,7 @@
                     <div class="serv-section-2">
                         <div class="serv-section-2-icon"><i class="fas fa-hotel"></i></div>
                         <div class="serv-section-desc">
-                            <h4>Alquileres en ejecución </h4>
+                            <h4>Alquileres activos </h4>
                             <h5>Va poder ver los alquileres<br /> que se encuentran vigentes en este momento.</h5>
                         </div>
                         <div class="section-heading-line-left"></div>

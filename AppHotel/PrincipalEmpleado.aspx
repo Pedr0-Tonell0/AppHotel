@@ -57,7 +57,7 @@
                     <div class="serv-section-2-icon">  <i class="far fa-clock"></i>  </div>
                     <div class="serv-section-desc">
                         <h4> Alquilar</h4>
-                        <h5>Usted va poder registrar el<br /> alquiler de una habitacion.</h5> </div>
+                        <h5>Va poder registrar el<br /> alquiler de una habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
         <a class="btn btn-dark" href="HabitacionDisponible.aspx">Ingresar</a>
 
@@ -68,7 +68,7 @@
                     <div class="serv-section-2-icon"> <i class="fas fa-users"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Clientes</h4>
-                        <h5>Usted va poder agregar y  <br />modificar clientes.</h5> </div>
+                        <h5>Va poder agregar y  <br />modificar clientes.</h5> </div>
                     <div class="section-heading-line-left"></div>
         <a class="btn btn-dark" href="ClienteABML.aspx">Ingresar</a>
 
@@ -95,7 +95,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-bed"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Entregar</h4>
-                        <h5>Usted va poder registrar la<br /> entrega de la habitacion.</h5> </div>
+                        <h5>Va poder registrar la<br /> entrega de la habitacion.</h5> </div>
                     <div class="section-heading-line-left"></div>
                                                                <a class="btn btn-dark" href="HabitacionAlquilada.aspx">Ingresar</a>
                                     </div>
@@ -105,7 +105,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-dollar-sign"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Precios</h4>
-                        <h5>Usted va poder ver los precios  y cantidad de habitaciones disponibles</h5> </div>
+                        <h5>Va poder ver los precios  y cantidad de habitaciones disponibles</h5> </div>
                     <div class="section-heading-line-left"></div>
                                                                <a class="btn btn-dark" href="HabitacionTipoPrecio.aspx">Ingresar</a>
                                     </div>
@@ -115,7 +115,7 @@
                     <div class="serv-section-2-icon serv-section-2-icon-act"> <i class="fas fa-suitcase-rolling"></i> </div>
                     <div class="serv-section-desc">
                         <h4>Reporte</h4>
-                        <h5>Usted va poder ver los <br /> alquileres y las entregas que realizó</h5> </div>
+                        <h5>Va poder ver los <br /> alquileres y las entregas que realizó</h5> </div>
                     <div class="section-heading-line-left"></div>
                                                                <a class="btn btn-dark" href="EmpleadoListaHome.aspx">Ingresar</a>
                                     </div>
