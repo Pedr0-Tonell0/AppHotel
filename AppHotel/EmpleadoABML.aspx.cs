@@ -114,6 +114,7 @@ namespace AppHotel
                         if (Estado == true)
                         {
                             EmpleadoNegocio.GenerarUsuario(Empleado);
+                            EmpleadoNegocio.EnviarCorreo(Empleado);
                             lblMensaje.Text = "Empleado agregado correctamente";
                             txtDNI.Text = "";
                             txtNombre.Text = "";

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+using System.Net;
+using System.Net.Mail;
 
 namespace Negocio
 {
@@ -120,6 +122,36 @@ namespace Negocio
                 throw ex;
             }
             return Estado;
+
+        }
+
+            public void EnviarCorreo(Empleado Empleado)
+        {
+            var fromAddress = new MailAddress("thebulldoghotelprogramacion@gmail.com", "Bulldog");
+            var toAddress = new MailAddress(Empleado.Email, Empleado.Nombre);
+            string mensaje = "<h2>Hola</h2>"+Empleado.Nombre+ "<h3>Su usuario es:</h3>" + Empleado.Dni + ".bulldog" + "<h3>Su contraseña es:</h3>" + Empleado.Dni ;
+            const string fromPassword = "programacion3";
+            const string subject = "Credenciales para entrar al sistema";
+            string body = mensaje;
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                IsBodyHtml = true,
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
 
         }
         public bool ModificarEmpleado(Empleado Empleado)
