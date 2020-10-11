@@ -1,6 +1,6 @@
-									THE BULLDOG HOTEL
+								THE BULLDOG HOTEL
 
-Es una app web que se realizo para rendir el final de Programación III de la carrera Tecnicatura Universitaria en Programación en la UTN FRGP.
+Es una app web que se realizo para rendir el final de ProgramaciÃ³n III de la carrera Tecnicatura Universitaria en ProgramaciÃ³n en la UTN FRGP.
 La web inicia con un Index, funciona como pagina informativa para atraer futuros clientes, el acceso a la app solo pueden hacerlo las personas
 que trabajan dentro del hotel.
 Al loguearse, segun el tipo de usuario que sea lo va llevar el home correspondiente. Si el usuario fue desempleado, no va poder acceder mas a la app.
@@ -18,15 +18,15 @@ La app cuenta con dos perfiles:
 El perfil de Gerente cuenta con los siguientes modulos:
 
 - Alquileres
-El gerente va tener acceso a los alquileres activos, sabiendo que usuario los registró.
+El gerente va tener acceso a los alquileres activos, sabiendo que usuario los registrÃ³.
 El gerente va tener acceso al historial de alquileres en la app.
 
-- Cambiar la contraseña de su perfil
+- Cambiar la contraseÃ±a de su perfil
 
 - ABML de empleados
 El gerente va poder dar de alta, modificar, eliminar y listar empleados.
 Cuando se agrega un empleado, se va poder cargar una foto para identificarlo correctamente.
-A la hora de dar de alta un empleado administrativo, se le va a enviar un email con el usuario y la contraseña para ingresar a la app.
+A la hora de dar de alta un empleado administrativo, se le va a enviar un email con el usuario y la contraseÃ±a para ingresar a la app.
 Cuenta con un grafico, mostrando cantidad de empleados actuales y cantidad de desempleados.
 
 - ABML de habitaciones
@@ -51,14 +51,14 @@ Cuando se alquila una habitacion, deja de estar disponible.
 
 - ABML de clientes
 Va poder dar de alta, baja, modificar y eliminar un cliente.
-Se necesita que el cliente este dado de alta en la app para poder alquilar una habitación.
+Se necesita que el cliente este dado de alta en la app para poder alquilar una habitaciÃ³n.
 
-- Cambiar la contraseña de su perfil
+- Cambiar la contraseÃ±a de su perfil
 
-- Entregar habitación
-Va poder hacer la entrega de la habitación.
+- Entregar habitaciÃ³n
+Va poder hacer la entrega de la habitaciÃ³n.
 Va poder generar una factura.
-Cuando se entrega una habitación, vuelve a estar disponible para ser alquilada.
+Cuando se entrega una habitaciÃ³n, vuelve a estar disponible para ser alquilada.
 
 - Precios
 Va poder ver precio de cada tipo de habitacion, cantidad de disponibles y alquiladas.
