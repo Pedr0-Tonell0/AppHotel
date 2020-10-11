@@ -129,7 +129,7 @@ namespace Negocio
         {
             var fromAddress = new MailAddress("thebulldoghotelprogramacion@gmail.com", "Bulldog");
             var toAddress = new MailAddress(Empleado.Email, Empleado.Nombre);
-            string mensaje = "<h2>Estimado "+ Empleado.Nombre +",</h2>" + "<i>Felicitaciones, ya te encuentras registrado en The Bulldog. Los siguientes son tus datos de acceso: </i></br>" + "<b>Usuario de acceso: </b><mark>" + Empleado.Dni + ".bulldog</mark>" + "<b> Clave de acceso: </b><mark>" + Empleado.Dni + "</mark><br><b> Te recomendamos cambiar la clave al ingresar por primera vez.</b>";
+            string mensaje = "<h2>Estimado/a "+ Empleado.Nombre +",</h2>" + "<i>Felicitaciones, ya te encuentras registrado en The Bulldog. Los siguientes son tus datos de acceso: </i></br>" + "<b>Usuario de acceso: </b><mark>" + Empleado.Dni + ".bulldog</mark>" + "<b> Clave de acceso: </b><mark>" + Empleado.Dni + "</mark><br><b> Te recomendamos cambiar la clave al ingresar por primera vez.</b>";
             const string fromPassword = "programacion3";
             const string subject = "Credenciales para ingresar al sistema";
             string body = mensaje;

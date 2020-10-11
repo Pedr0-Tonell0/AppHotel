@@ -1,4 +1,4 @@
-								THE BULLDOG HOTEL
+﻿								THE BULLDOG HOTEL
 
 Es una app web que se realizo para rendir el final de Programación III de la carrera Tecnicatura Universitaria en Programación en la UTN FRGP.
 La web inicia con un Index, funciona como pagina informativa para atraer futuros clientes, el acceso a la app solo pueden hacerlo las personas
