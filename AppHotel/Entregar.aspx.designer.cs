@@ -168,6 +168,15 @@ namespace AppHotel
         protected global::System.Web.UI.WebControls.Button BtnEntregar;
 
         /// <summary>
+        /// Control BtnFactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnFactura;
+
+        /// <summary>
         /// Control lblMensaje.
         /// </summary>
         /// <remarks>

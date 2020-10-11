@@ -180,7 +180,9 @@
 </div>
         <div>
 <asp:Button Text="Entregar" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnEntregar" runat="server" OnClick="BtnEntregar_Click"   />
-   </div>
+ <asp:Button Text="Generar factura" Style="margin-top: 20px;background-color:black;" class="btn btn-dark" ClientIDMode="Static" ID="BtnFactura" runat="server" OnClick="Button1_Click"   />
+
+            </div>
              <br />
                           <asp:Label ID="lblMensaje" runat="server" style="font:icon;color:firebrick;"></asp:Label> 
 

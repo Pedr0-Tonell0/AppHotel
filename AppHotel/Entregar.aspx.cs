@@ -6,11 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using Dominio;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.tool.xml;
+using System.IO;
+using itextsharp.pdfa;
+
 
 namespace AppHotel
 {
     public partial class Entregar : System.Web.UI.Page
     {
+        static Document pdf;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -43,6 +52,69 @@ namespace AppHotel
             }
 
         }
+        public void GenerarFactura()
+        {
+            pdf = new Document(PageSize.LETTER);
+            string rutaImagen = Server.MapPath("~/Fotos/logo.png");
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=Factura.pdf");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            PdfWriter.GetInstance(pdf, Response.OutputStream);
+            pdf.Open();
+            pdf.AddAuthor("The Bulldog");
+            pdf.AddCreationDate();
+            pdf.AddTitle("FACTURA HOTEL THE BULLDOG");
+            // Creamos la imagen y le ajustamos el tamaño
+         iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(rutaImagen);
+           imagen.BorderWidth = 0;
+            imagen.Alignment = Element.ALIGN_LEFT;
+            float percentage = 0.0f;
+            percentage = 150 / imagen.Width;
+            imagen.ScalePercent(percentage * 100);
+
+        //     Insertamos la imagen en el documento
+            pdf.Add(imagen);
+            Paragraph parrafo = new Paragraph("FACTURA HOTEL THE BULLDOG");
+            parrafo.Alignment = Element.ALIGN_CENTER;
+            //agregar el titulo al documento
+            pdf.Add(parrafo);
+            pdf.Add(new Paragraph(" "));
+            pdf.Add(new Paragraph(" "));
+
+            //crear la tabla con los datos de la factura
+            PdfPTable tabla = new PdfPTable(2);
+            tabla.HorizontalAlignment = Element.ALIGN_CENTER;
+            tabla.AddCell("Dni Cliente:"); tabla.AddCell(txtDNI.Text);
+            tabla.AddCell("Nombre Cliente:"); tabla.AddCell(txtNombre.Text);
+            tabla.AddCell("Fecha:"); tabla.AddCell(DateTime.Now.Date.ToShortDateString());
+            tabla.AddCell("Fecha de Ingreso:"); tabla.AddCell(txtFechaIngreso.Text);
+            tabla.AddCell("Fecha de Salida:"); tabla.AddCell(txtFechaEgreso.Text);
+            tabla.AddCell("Número de Días:"); tabla.AddCell(TxtDias.Text);
+            tabla.AddCell("Costo Noche:"); tabla.AddCell("$" + txtCosto.Text);
+            tabla.AddCell("Costo Total:"); tabla.AddCell("$" + txtFinal.Text);
+            //agrega la tabla al documento
+            pdf.Add(tabla);
+            //agrega varias líneas vacías
+            pdf.Add(new Paragraph(" ")); pdf.Add(new Paragraph(" ")); pdf.Add(new Paragraph(" "));
+            pdf.Add(new Paragraph(" ")); pdf.Add(new Paragraph(" ")); pdf.Add(new Paragraph(" "));
+           rutaImagen = Server.MapPath("~/Fotos/firma.jpg");
+            iTextSharp.text.Image imagen2 = iTextSharp.text.Image.GetInstance(rutaImagen);
+            imagen2.BorderWidth = 0;
+            imagen2.Alignment = Element.ALIGN_CENTER;
+            percentage = 0.0f;
+            percentage = 150 / imagen2.Width;
+            imagen2.ScalePercent(percentage * 50);
+            pdf.Add(imagen2);
+            parrafo = new Paragraph("________________________________");
+            parrafo.Alignment = Element.ALIGN_CENTER;
+            pdf.Add(parrafo);
+            parrafo = new Paragraph("Gerente");
+            parrafo.Alignment = Element.ALIGN_CENTER;
+            pdf.Add(parrafo);
+            pdf.Close();
+            Response.Write(pdf);
+        }
+
 
         protected void BtnEntregar_Click(object sender, EventArgs e)
         {
@@ -67,9 +139,11 @@ namespace AppHotel
                 Alquilar.Precio = Convert.ToInt32(Precio) * Days;
                 Estado1 = AlquilerNegocio.EntregarHabitacion(Alquilar,Empleado.Dni);
                 Estado2 = HabitacionNegocio.VolverDisponibleHabitacion(NumeroHabitacion);
+             
                 if (Estado1 == true && Estado2 == true)
                 {
                     lblMensaje.Text = "Habitacion entregada correctamente";
+                    BtnEntregar.Visible = false;
                     txtObservaciones.Text = "";
                     txtNombre.Text = "";
                     txtFinal.Text = "";
@@ -78,7 +152,7 @@ namespace AppHotel
                     txtFechaEgreso.Text = "";
                     txtDNI.Text = "";
                     txtFechaIngreso.Text = "";
-                    BtnEntregar.Visible = false;
+
                 }
                 else
                 {
@@ -86,6 +160,7 @@ namespace AppHotel
 
                 }
 
+           
             }
             catch (Exception)
             {
@@ -93,5 +168,10 @@ namespace AppHotel
                 throw;
             }
          }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GenerarFactura();
+        }
     }
 }

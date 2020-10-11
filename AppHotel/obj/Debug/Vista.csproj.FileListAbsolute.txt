@@ -184,3 +184,6 @@ C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\obj\Debug\Vista.csprojAss
 C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\obj\Debug\AppHotel.dll
 C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\obj\Debug\AppHotel.pdb
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\bin\itextsharp.dll
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\bin\itextsharp.pdfa.dll
+C:\Users\pedri_000\Desktop\apps\clon\AppHotel\AppHotel\bin\itextsharp.xmlworker.dll
