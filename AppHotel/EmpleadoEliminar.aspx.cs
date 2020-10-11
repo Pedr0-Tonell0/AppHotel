@@ -14,6 +14,11 @@ namespace AppHotel
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int Dni = Convert.ToInt32(Request.QueryString["Dni"]);
+            EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
+            Empleado Empleado = new Empleado();
+            Empleado = EmpleadoNegocio.BuscarEmpleado(Dni);
+            Image1.ImageUrl = Empleado.Foto;
 
         }
 

@@ -18,7 +18,9 @@
             EmpleadoNegocio EmpleadoNegocio = new EmpleadoNegocio();
             Empleado Empleado = new Empleado();
             Empleado = EmpleadoNegocio.BuscarEmpleado(Dni);   %>
-     <center> <p>Usted esta seguro de eliminar a  <%=Empleado.Nombre%>?</p></center>  
+     <center> 
+          <asp:Image ID="Image1" runat="server" Height="200" Width="200"/>
+         <p>Usted esta seguro de eliminar a  <%=Empleado.Nombre%>?</p></center>  
         <div class="row">
             <div class="col-12-xs text-center">
                 <asp:Button ID="Si" runat="server" Text="Si" class="btn btn-success btn-md" OnClick="Si_Click"/>
