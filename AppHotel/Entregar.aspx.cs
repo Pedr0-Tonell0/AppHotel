@@ -144,6 +144,7 @@ namespace AppHotel
                 {
                     lblMensaje.Text = "Habitacion entregada correctamente";
                     BtnEntregar.Visible = false;
+                    BtnFactura.Visible = false;
                     txtObservaciones.Text = "";
                     txtNombre.Text = "";
                     txtFinal.Text = "";
