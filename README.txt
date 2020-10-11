@@ -4,7 +4,12 @@ Es una app web que se realizo para rendir el final de Programación III de la car
 La web inicia con un Index, funciona como pagina informativa para atraer futuros clientes, el acceso a la app solo pueden hacerlo las personas
 que trabajan dentro del hotel.
 Al loguearse, segun el tipo de usuario que sea lo va llevar el home correspondiente. Si el usuario fue desempleado, no va poder acceder mas a la app.
+Al iniciar la app siempre va contar con el usuario Gerente por default.
 
+Usuario = 40391972.bulldog
+
+Clave = 40391972
+---------------------------------------------------------------------------------------------------------------------------------------------------
 La app cuenta con dos perfiles:
 - Gerente
 - Administrativo
